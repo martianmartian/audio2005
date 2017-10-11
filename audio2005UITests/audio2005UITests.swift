@@ -51,10 +51,14 @@ class audio2005UITests: XCTestCase {
         XCTAssert(action.exists)
         action.tap()
 
-        
+
         sleep(3)
         XCTAssertEqual(collectionView.cells.count, 2)
         collectionView.cells.element(boundBy: 1).tap()
+        
+        let firstrow = app.tables.children(matching:.any).element(boundBy: 0)
+        XCTAssert(firstrow.exists)
+        
         
         
         

@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		430617601F8A245E00432E69 /* HttpFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306175F1F8A245E00432E69 /* HttpFrameTests.swift */; };
-		430617681F8A484100432E69 /* MP3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617671F8A484100432E69 /* MP3.swift */; };
+		430617681F8A484100432E69 /* MP3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617671F8A484100432E69 /* MP3Controller.swift */; };
 		4306176F1F8A58E100432E69 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306176E1F8A58E100432E69 /* components.swift */; };
-		430617711F8A64C400432E69 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617701F8A64C400432E69 /* MainFactory.swift */; };
+		430617711F8A64C400432E69 /* FactoryHttpInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617701F8A64C400432E69 /* FactoryHttpInterface.swift */; };
 		430617731F8A653800432E69 /* FactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617721F8A653800432E69 /* FactoriesTests.swift */; };
 		432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432136DA1F8929880045F6A9 /* HttpFrame.swift */; };
 		433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433664E71F8CF41300944D1B /* audio2005UITests.swift */; };
@@ -56,9 +56,9 @@
 		430617641F8A321400432E69 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		430617651F8A321400432E69 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		430617661F8A321400432E69 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		430617671F8A484100432E69 /* MP3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3.swift; sourceTree = "<group>"; };
+		430617671F8A484100432E69 /* MP3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3Controller.swift; sourceTree = "<group>"; };
 		4306176E1F8A58E100432E69 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = components.swift; sourceTree = "<group>"; };
-		430617701F8A64C400432E69 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		430617701F8A64C400432E69 /* FactoryHttpInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryHttpInterface.swift; sourceTree = "<group>"; };
 		430617721F8A653800432E69 /* FactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesTests.swift; sourceTree = "<group>"; };
 		432136DA1F8929880045F6A9 /* HttpFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpFrame.swift; sourceTree = "<group>"; };
 		433664E51F8CF41300944D1B /* audio2005UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audio2005UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,9 +231,9 @@
 			isa = PBXGroup;
 			children = (
 				433987211F8942600062FC07 /* Constants.swift */,
-				430617701F8A64C400432E69 /* MainFactory.swift */,
 				433AA3FF1F8A217100575567 /* AlbumFactory.swift */,
 				433AA4011F8A21BA00575567 /* ItemsFactory.swift */,
+				430617701F8A64C400432E69 /* FactoryHttpInterface.swift */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 				43C737391F89215C0098D95A /* IViewController.swift */,
 				43F0C7DC1F8939A70091D790 /* IIViewController.swift */,
 				43F0C7DE1F893ABB0091D790 /* IIIViewController.swift */,
-				430617671F8A484100432E69 /* MP3.swift */,
+				430617671F8A484100432E69 /* MP3Controller.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -408,12 +408,12 @@
 				43C7375F1F8922380098D95A /* syslog.swift in Sources */,
 				43F0C7DD1F8939A70091D790 /* IIViewController.swift in Sources */,
 				433AA4021F8A21BA00575567 /* ItemsFactory.swift in Sources */,
-				430617681F8A484100432E69 /* MP3.swift in Sources */,
+				430617681F8A484100432E69 /* MP3Controller.swift in Sources */,
 				43C737381F89215C0098D95A /* AppDelegate.swift in Sources */,
 				433AA4001F8A217100575567 /* AlbumFactory.swift in Sources */,
 				43F0C7DF1F893ABB0091D790 /* IIIViewController.swift in Sources */,
 				433AA3FE1F8A0C1D00575567 /* utils.swift in Sources */,
-				430617711F8A64C400432E69 /* MainFactory.swift in Sources */,
+				430617711F8A64C400432E69 /* FactoryHttpInterface.swift in Sources */,
 				433987221F8942600062FC07 /* Constants.swift in Sources */,
 				43C737621F8927070098D95A /* Extensions.swift in Sources */,
 				432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */,

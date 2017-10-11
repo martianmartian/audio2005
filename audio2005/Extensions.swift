@@ -77,37 +77,7 @@ extension URL {
     
 }
 
-extension URLRequest{
-    
-    static func makeQueryURL(root:String,queries:[String:String])->URL{
-        var wtf = root
-        for (key,val) in queries{
-            let appendie = "?" + String(key)+"="+String(val)
-            wtf+=appendie
-        }
-        return URL(string:wtf)!
-    }
-    
-    static func config(config:[String:AnyObject])->URLRequest{
-        var url = URLComponents(string: config["root"] as! String)
-        let them = (config["queries"] as? [String:AnyObject])!
-        url?.queryItems=[]
-        for (key,val) in them{
-            url?.queryItems?.append(URLQueryItem(name:key,value:val as? String))
-        }
-        var request = URLRequest(url:(url?.url)!)
-        request.httpMethod = config["method"] as? String
-        return request
-        
-        //let config=[
-        //    "root":"http://localhost:8080/test",
-        //    "method":"GET",
-        //    "params":obj
-        //    ] as [String : AnyObject]
-        //let req = URL.config(config:config as [String : AnyObject])
-    }
-    
-}
+
 
 extension URLComponents{
     static func help(){

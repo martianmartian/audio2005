@@ -15,31 +15,26 @@ class IIViewController: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.alwaysBounceVertical = false
+        logvar("viewItems", viewItems)
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return viewItems.count }
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as! itemCell
-//        cell.itemCell.text = MP3.viewingItems[indexPath.row]["itemName"] as? String
-//        cell.tag = indexPath.row
-//        //print(cell.tag)
-//        cell.isUserInteractionEnabled=true
-//        let cellTap:UITapGestureRecognizer
-//        cellTap = UITapGestureRecognizer(target:self,action:#selector(SecondViewController.selectedItem))
-//        cell.addGestureRecognizer(cellTap)
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return viewItems.count }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
+        cell.textLabel?.text = viewItems[indexPath.row]["itemName"] as? String
+        cell.isUserInteractionEnabled=true
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("current item is at: \(MP3.viewingItems[indexPath.row]["itemId"] ?? "Something wrong" as AnyObject)")
+        //indexPath.row
+//        MP3.selectedItem(tappedItemIndex:tappedItemIndex)
+//        // always to switch view the third
+//        self.performSegue(withIdentifier: "toThird", sender: self)
     }
     
     
 }
 
 
-class itemCell: UITableViewCell {
-    
-    
-    
-}
+
+

@@ -37,7 +37,7 @@ class ItemsFactory{
                 guard let albumItems = data[theid] as? [Dictionary<String,AnyObject>] else{logmark();continue}
                 //there's a problem here: item's mp3 might be lost
                 //this approach only works for first time loading items
-                db.set(albumItems,forKey:albumKey)
+                db.set(albumItems,forKey:theid)
             }
         }
         

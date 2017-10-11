@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MainFactory{
+class FactoryHttpInterface{
     static func getFiles(obj:[String:AnyObject],fn:@escaping ([String: AnyObject])->()){
         
         let config=[
@@ -26,6 +26,17 @@ class MainFactory{
     
     static func removeEverything(){
         db.removeObject(forKey:albumKey)
+    }
+    
+    static func downloadOne(id:String){
+        let config = [
+            "root":urlRoot + "get_mp3",
+            "method":"GET",
+            "queries":["id":id]
+            ] as [String : AnyObject]
+        print(config)
+
+        
     }
     
 }

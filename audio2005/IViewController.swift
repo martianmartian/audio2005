@@ -11,7 +11,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func removeAll(_ sender: UIButton) {
-        MainFactory.removeEverything()
+        FactoryHttpInterface.removeEverything()
         self.collectionView.reloadData()
     }
     override func loadView() {
@@ -20,6 +20,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
         
     }
     
+    //Mark: View Display and interaction
     func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)->Int {return Albums.count+1}
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -27,29 +28,26 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
         albumCell.albumImage.image = UIImage(named: albumCovers[indexPath.row])
         albumCell.imageLabel.text = albumCovers[indexPath.row]
         albumCell.isUserInteractionEnabled=true
-//        let CellTap:UITapGestureRecognizer
-//        if indexPath.row == 0{
-//            //Mark: the first addition button
-//            CellTap = UITapGestureRecognizer(target:self,action:#selector(IViewController.prepReq))
-//        }else{
-//            //Mark: albums
-//            CellTap = UITapGestureRecognizer(target:self,action:#selector(IViewController.goToView2))
-//            albumCell.tag = indexPath.row-1
-//        }
-//        albumCell.addGestureRecognizer(CellTap)
+
         return albumCell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        switch indexPath.row {
+        case 0:
+            self.prepReq()
+        default:
+            goToView2(indexPath.row-1)
+        }
     }
     
-    @objc func goToView2(_ gesture:AnyObject){ //print("go to second view here")
-        let tag = gesture.view!.tag
+    @objc func goToView2(_ index:Int){ //print("go to second view here")
+        if index <= Albums.count{
+            guard let chosenAlbumId = Albums[index]["albumid"] as? String else {return}
+            AlbumFactory.viewAlbumId = chosenAlbumId
+            logmark(mark: "Going to album: \(chosenAlbumId)")
+            self.performSegue(withIdentifier: "toSecond", sender: self)
+        }else{logmark(mark: "index out of range, what's wrong?")}
         
-        guard let chosenAlbumId = Albums[tag]["albumid"] as? String else {return}
-        AlbumFactory.viewAlbumId = chosenAlbumId
-        logmark(mark: "Going to album: \(chosenAlbumId)")
-        self.performSegue(withIdentifier: "toSecond", sender: self)
     }
     
     @objc func prepReq(){
@@ -60,7 +58,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
     }
     
     func reqFile(obj:Dictionary<String, AnyObject>){
-        MainFactory.getFiles(obj:obj){ data in
+        FactoryHttpInterface.getFiles(obj:obj){ data in
             
             //Mark: all three asynch here should have their ways of detecting already downloaded files
             //Checked
