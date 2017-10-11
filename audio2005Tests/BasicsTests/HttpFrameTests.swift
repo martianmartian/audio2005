@@ -21,10 +21,10 @@ class HttpFrameTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testHTTP() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let expect = expectation(description: "Download should succeed")
+        let expect = expectation(description: "Query should succeed")
         loghere()
         let config=[
             "root":"http://localhost:5000/query_file",
@@ -34,6 +34,7 @@ class HttpFrameTests: XCTestCase {
         
         HTTP.req(config:config){result in
             logvar("result", result)
+            XCTAssertNotNil(result)
             expect.fulfill()
         }
         

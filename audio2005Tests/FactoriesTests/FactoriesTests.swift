@@ -1,5 +1,5 @@
 //
-//  AlbumFacTests.swift
+//  FactoriesTests.swift
 //  audio2005Tests
 //
 //  Created by martian2049 on 10/8/17.
@@ -9,9 +9,7 @@
 import XCTest
 @testable import audio2005
 
-class AlbumFacTests: XCTestCase {
-    
-    var IVC = IViewController()
+class FactoriesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,8 +21,19 @@ class AlbumFacTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testAlbumFactory(){
         XCTAssertNotNil(AlbumFactory.getLocalAlbums())
+    }
+    
+    func testMainFactory() {
+        let expect = expectation(description: "Download should succeed")
+        MainFactory.getFiles(obj:["code":"323" as AnyObject]){ result in
+            logvar("result", result)
+            expect.fulfill()
+        }
+        waitForExpectations(timeout: 10) { (error) in
+            XCTAssertNil(error)
+        }
     }
     
     func testPerformanceExample() {

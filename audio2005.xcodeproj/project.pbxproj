@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		430617601F8A245E00432E69 /* HttpFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306175F1F8A245E00432E69 /* HttpFrameTests.swift */; };
 		430617681F8A484100432E69 /* MP3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617671F8A484100432E69 /* MP3.swift */; };
+		4306176F1F8A58E100432E69 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306176E1F8A58E100432E69 /* components.swift */; };
+		430617711F8A64C400432E69 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617701F8A64C400432E69 /* MainFactory.swift */; };
+		430617731F8A653800432E69 /* FactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617721F8A653800432E69 /* FactoriesTests.swift */; };
 		432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432136DA1F8929880045F6A9 /* HttpFrame.swift */; };
+		433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433664E71F8CF41300944D1B /* audio2005UITests.swift */; };
 		433987221F8942600062FC07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433987211F8942600062FC07 /* Constants.swift */; };
 		433AA3FE1F8A0C1D00575567 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA3FD1F8A0C1D00575567 /* utils.swift */; };
 		433AA4001F8A217100575567 /* AlbumFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA3FF1F8A217100575567 /* AlbumFactory.swift */; };
 		433AA4021F8A21BA00575567 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA4011F8A21BA00575567 /* ItemsFactory.swift */; };
 		433AA4081F8A222E00575567 /* IVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA4071F8A222E00575567 /* IVCTests.swift */; };
-		433AA40A1F8A22AB00575567 /* AlbumFacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA4091F8A22AB00575567 /* AlbumFacTests.swift */; };
 		43C737381F89215C0098D95A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737371F89215C0098D95A /* AppDelegate.swift */; };
 		43C7373A1F89215C0098D95A /* IViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737391F89215C0098D95A /* IViewController.swift */; };
 		43C7373D1F89215C0098D95A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C7373B1F89215C0098D95A /* Main.storyboard */; };
@@ -29,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		433664EA1F8CF41300944D1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43C7372C1F89215C0098D95A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43C737331F89215C0098D95A;
+			remoteInfo = audio2005;
+		};
 		43C737491F89215C0098D95A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43C7372C1F89215C0098D95A /* Project object */;
@@ -47,13 +57,18 @@
 		430617651F8A321400432E69 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		430617661F8A321400432E69 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		430617671F8A484100432E69 /* MP3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3.swift; sourceTree = "<group>"; };
+		4306176E1F8A58E100432E69 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = components.swift; sourceTree = "<group>"; };
+		430617701F8A64C400432E69 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		430617721F8A653800432E69 /* FactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesTests.swift; sourceTree = "<group>"; };
 		432136DA1F8929880045F6A9 /* HttpFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpFrame.swift; sourceTree = "<group>"; };
+		433664E51F8CF41300944D1B /* audio2005UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audio2005UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		433664E71F8CF41300944D1B /* audio2005UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio2005UITests.swift; sourceTree = "<group>"; };
+		433664E91F8CF41300944D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		433987211F8942600062FC07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		433AA3FD1F8A0C1D00575567 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		433AA3FF1F8A217100575567 /* AlbumFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFactory.swift; sourceTree = "<group>"; };
 		433AA4011F8A21BA00575567 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
 		433AA4071F8A222E00575567 /* IVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVCTests.swift; sourceTree = "<group>"; };
-		433AA4091F8A22AB00575567 /* AlbumFacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFacTests.swift; sourceTree = "<group>"; };
 		43C737341F89215C0098D95A /* audio2005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audio2005.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C737371F89215C0098D95A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43C737391F89215C0098D95A /* IViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +86,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		433664E21F8CF41300944D1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43C737311F89215C0098D95A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +119,15 @@
 			name = Basics;
 			sourceTree = "<group>";
 		};
+		433664E61F8CF41300944D1B /* audio2005UITests */ = {
+			isa = PBXGroup;
+			children = (
+				433664E71F8CF41300944D1B /* audio2005UITests.swift */,
+				433664E91F8CF41300944D1B /* Info.plist */,
+			);
+			path = audio2005UITests;
+			sourceTree = "<group>";
+		};
 		433AA4031F8A21D500575567 /* BasicsTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +146,7 @@
 		433AA4051F8A21EC00575567 /* FactoriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				433AA4091F8A22AB00575567 /* AlbumFacTests.swift */,
+				430617721F8A653800432E69 /* FactoriesTests.swift */,
 			);
 			path = FactoriesTests;
 			sourceTree = "<group>";
@@ -133,6 +164,7 @@
 			children = (
 				43C737361F89215C0098D95A /* audio2005 */,
 				43C7374B1F89215C0098D95A /* audio2005Tests */,
+				433664E61F8CF41300944D1B /* audio2005UITests */,
 				43C737351F89215C0098D95A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,6 +174,7 @@
 			children = (
 				43C737341F89215C0098D95A /* audio2005.app */,
 				43C737481F89215C0098D95A /* audio2005Tests.xctest */,
+				433664E51F8CF41300944D1B /* audio2005UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +214,7 @@
 			children = (
 				43C7375E1F8922380098D95A /* syslog.swift */,
 				433AA3FD1F8A0C1D00575567 /* utils.swift */,
+				4306176E1F8A58E100432E69 /* components.swift */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -197,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				433987211F8942600062FC07 /* Constants.swift */,
+				430617701F8A64C400432E69 /* MainFactory.swift */,
 				433AA3FF1F8A217100575567 /* AlbumFactory.swift */,
 				433AA4011F8A21BA00575567 /* ItemsFactory.swift */,
 			);
@@ -230,6 +265,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		433664E41F8CF41300944D1B /* audio2005UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 433664EE1F8CF41300944D1B /* Build configuration list for PBXNativeTarget "audio2005UITests" */;
+			buildPhases = (
+				433664E11F8CF41300944D1B /* Sources */,
+				433664E21F8CF41300944D1B /* Frameworks */,
+				433664E31F8CF41300944D1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				433664EB1F8CF41300944D1B /* PBXTargetDependency */,
+			);
+			name = audio2005UITests;
+			productName = audio2005UITests;
+			productReference = 433664E51F8CF41300944D1B /* audio2005UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		43C737331F89215C0098D95A /* audio2005 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C737511F89215C0098D95A /* Build configuration list for PBXNativeTarget "audio2005" */;
@@ -275,6 +328,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = martian2049;
 				TargetAttributes = {
+					433664E41F8CF41300944D1B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 43C737331F89215C0098D95A;
+					};
 					43C737331F89215C0098D95A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -301,11 +359,19 @@
 			targets = (
 				43C737331F89215C0098D95A /* audio2005 */,
 				43C737471F89215C0098D95A /* audio2005Tests */,
+				433664E41F8CF41300944D1B /* audio2005UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		433664E31F8CF41300944D1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43C737321F89215C0098D95A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +392,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		433664E11F8CF41300944D1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43C737301F89215C0098D95A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,9 +413,11 @@
 				433AA4001F8A217100575567 /* AlbumFactory.swift in Sources */,
 				43F0C7DF1F893ABB0091D790 /* IIIViewController.swift in Sources */,
 				433AA3FE1F8A0C1D00575567 /* utils.swift in Sources */,
+				430617711F8A64C400432E69 /* MainFactory.swift in Sources */,
 				433987221F8942600062FC07 /* Constants.swift in Sources */,
 				43C737621F8927070098D95A /* Extensions.swift in Sources */,
 				432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */,
+				4306176F1F8A58E100432E69 /* components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,15 +426,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				433AA4081F8A222E00575567 /* IVCTests.swift in Sources */,
+				430617731F8A653800432E69 /* FactoriesTests.swift in Sources */,
 				430617601F8A245E00432E69 /* HttpFrameTests.swift in Sources */,
 				43C7374D1F89215C0098D95A /* audio2005Tests.swift in Sources */,
-				433AA40A1F8A22AB00575567 /* AlbumFacTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		433664EB1F8CF41300944D1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43C737331F89215C0098D95A /* audio2005 */;
+			targetProxy = 433664EA1F8CF41300944D1B /* PBXContainerItemProxy */;
+		};
 		43C7374A1F89215C0098D95A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 43C737331F89215C0098D95A /* audio2005 */;
@@ -386,6 +467,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		433664EC1F8CF41300944D1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8S8Q3W4MR;
+				INFOPLIST_FILE = audio2005UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = audio.audio2005UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = audio2005;
+			};
+			name = Debug;
+		};
+		433664ED1F8CF41300944D1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8S8Q3W4MR;
+				INFOPLIST_FILE = audio2005UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = audio.audio2005UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = audio2005;
+			};
+			name = Release;
+		};
 		43C7374F1F89215C0098D95A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -560,6 +671,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		433664EE1F8CF41300944D1B /* Build configuration list for PBXNativeTarget "audio2005UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				433664EC1F8CF41300944D1B /* Debug */,
+				433664ED1F8CF41300944D1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		43C7372F1F89215C0098D95A /* Build configuration list for PBXProject "audio2005" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

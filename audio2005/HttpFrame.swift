@@ -4,15 +4,15 @@ import Foundation
 
 class HTTP{
     
-    static func req(config:[String:AnyObject],fn:@escaping(AnyObject)->()){
+    static func req(config:[String:AnyObject],fn:@escaping([String: AnyObject])->()){
 
-        let request = HTTP.makeReq(config:config as [String : AnyObject])
+        let request = HTTP.prepReq(config:config as [String : AnyObject])
         URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {(data,res,err)-> Void in
-            //print(data!)
             if err != nil{print("returned nil from HttpReq.getFile server request");return}
             do {
-                let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject]
-                fn(result as AnyObject)
+                guard let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] else {
+                    logmark();return}
+                fn(result)
             }catch{print("Error -> \(error)")}
             
         }).resume()
@@ -22,7 +22,7 @@ class HTTP{
 
 extension HTTP{
     
-    static func makeReq(config:[String:AnyObject])->URLRequest{
+    static func prepReq(config:[String:AnyObject])->URLRequest{
         var url = URLComponents(string: config["root"] as! String)
         let them = (config["queries"] as? [String:AnyObject])!
         url?.queryItems=[]

@@ -28,13 +28,11 @@ class _u{
         return final
     }
 
-    static func pluck(data:[Any], key:String)->[String]{
+    static func pluck(data:[Dictionary<String, AnyObject>], key:String)->[String]{
         var arr = [String]()
-        if data.count>0{
-            for al in data{
-                let al = al as AnyObject
-                arr.append(al.value(forKey:key) as! String)
-            }
+        for dict in data{
+            guard let id = dict[key] as? String else {continue}
+            arr.append(id)
         }
         return arr
     }
