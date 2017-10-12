@@ -44,20 +44,20 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
         if index <= Albums.count{
             guard let chosenAlbumId = Albums[index]["albumid"] as? String else {return}
             AlbumFactory.viewAlbumId = chosenAlbumId
-            logmark(mark: "Going to album: \(chosenAlbumId)")
+            logmark("Going to album: \(chosenAlbumId)")
             self.performSegue(withIdentifier: "toSecond", sender: self)
-        }else{logmark(mark: "index out of range, what's wrong?")}
+        }else{logmark("index out of range, what's wrong?")}
         
     }
     
     @objc func prepReq(){
         let alert = _c.userinput(title: "For Sync", message: "Enter yoru code") { code in
-            self.reqFile(obj:["code":code as AnyObject])
+            self.reqFile(obj:["code":code as String])
         }
         self.present(alert, animated: false)
     }
     
-    func reqFile(obj:Dictionary<String, AnyObject>){
+    func reqFile(obj:Dictionary<String, String>){
         FactoryHttpInterface.getFiles(obj:obj){ data in
             
             //Mark: all three asynch here should have their ways of detecting already downloaded files
@@ -67,8 +67,8 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
             AlbumFactory.updateLocalAlbums(data:data[albumKey])
             ItemsFactory.updateLocalItems(data:data)
             
-//            Items.downloadNewItems()
-//
+
+
             DispatchQueue.main.async{self.collectionView.reloadData()}
 
         }

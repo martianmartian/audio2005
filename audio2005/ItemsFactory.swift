@@ -5,6 +5,7 @@
 //  Created by martian2049 on 10/8/17.
 //  Copyright © 2017 martian2049. All rights reserved.
 //
+import Foundation
 
 class ItemsFactory{
     
@@ -41,7 +42,59 @@ class ItemsFactory{
             }
         }
         
+    }
+    
+    static func triggerDownload(){
+        
+    }
+    static func downloadAllNew(){
         
     }
     
+    static func downloadAlbum(id:String){
+        //get the album by id
+        //loop through the album
+        //cache how many are being downloaded
+            //limit to 2 at the same tile
+        //downloadOne(item)
+        //downloadOne(item)  only the next, if there is
+            //remove it's own id from cache
+            //???recursively call this function until finished all?
+        
+    }
+
+    static var downloadingList = [String]()
+    static func downloadOne(item:Dictionary<String,AnyObject>,fn:@escaping(_ localURL:URL)->()){
+    /*
+    //check if already downloaded: newOrOld
+    //?? check if triggered twice???yes
+    //if not in downloadinglist, add it
+    //start downloading
+         //callback(localURL):
+    */
+        guard item["newOrNot"] as? String == "0" else{logmark("dup download attemped");return}
+        guard let id = item[itemId] as? String else{logmark("empty item???");return}
+        if(downloadingList.contains(id)==true){logmark("dup download-ing attemped");return}
+        downloadingList.append(id)
+        FactoryHttpInterface.downloadOne(id:id){ localURL in
+            logvar("localURL", localURL)
+            downloadingList = downloadingList.filter {$0 != id}
+            fn(localURL)
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

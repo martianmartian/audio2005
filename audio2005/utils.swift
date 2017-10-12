@@ -9,7 +9,19 @@
 import Foundation
 
 class _u{
-    
+    static func makeQueryURL(root:String,queries:Dictionary<String,String>)->String{
+        var wtf = root
+        var i=0
+        for (key,val) in queries{
+            switch i{
+            case 0: wtf+="?" + String(key)+"=" + String(val)
+            default:  wtf+="&" + String(key) + "=" + String(val)
+            }
+            i+=1
+        }
+        
+        return wtf
+    }
     static func randomString(length: Int) -> String {
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)

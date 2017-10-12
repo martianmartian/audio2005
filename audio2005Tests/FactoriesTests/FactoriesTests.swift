@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Foundation
 @testable import audio2005
 
 class FactoriesTests: XCTestCase {
@@ -27,18 +28,45 @@ class FactoriesTests: XCTestCase {
     
     func testMainFactory_getFiles() {
         let expect = expectation(description: "Request should succeed")
-        FactoryHttpInterface.getFiles(obj:["code":"323" as AnyObject]){ result in
-            logvar("result", result)
+        FactoryHttpInterface.getFiles(obj:["code":"323"]){ result in
+//            logvar("files result", result)
             expect.fulfill()
         }
         waitForExpectations(timeout: 3) { (error) in
             XCTAssertNil(error)
         }
     }
+    
     func testMainFactory_downloadOne(){
-//        let expect = expectation(description: "download one should work")
-//        FactoryHttpInterface.downloadOne(id:"cd5b8ee5-b415-cb4b-cf8c-bfb97cbc62d8")
-//        
+        let expect = expectation(description: "download one should work")
+        let id = "cd5b8ee5-b415-cb4b-cf8c-bfb97cbc62d8"
+        FactoryHttpInterface.downloadOne(id:id){ localURL in
+            XCTAssertNotNil(localURL)
+            expect.fulfill()
+        }
+        waitForExpectations(timeout: 3) { (error) in
+            XCTAssertNil(error)
+        }
+    }
+    func testItemsFactory_downloadOne(){
+        let item = [
+            "newOrNot":"0",
+            "itemId":"cd5b8ee5-b415-cb4b-cf8c-bfb97cbc62d8"
+        ]
+        let expect = expectation(description: "download one should work")
+        ItemsFactory.downloadOne(item:item as [String:AnyObject]){localURL in
+            logvar("localURL", localURL)
+            XCTAssertNotNil(localURL)
+            expect.fulfill()
+            //remove the downloaded things at the end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        }
+        ItemsFactory.downloadOne(item:item as [String:AnyObject]){localURL in
+            logvar("localURL", localURL)
+            XCTAssertNotNil(localURL)
+        }
+        waitForExpectations(timeout: 3) { (error) in
+            XCTAssertNil(error)
+        }
     }
     
     func testPerformanceExample() {

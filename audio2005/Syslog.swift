@@ -25,16 +25,16 @@ func loghere(_ line:Int = #line, _ function:String = #function, _ file:String = 
     print("\n\n---------here---------;","Function: \(function), line: \(line), Flie:\(file)","\n\n")
 }
 
-func logmark(mark:String="Potential Error here" ,_ line:Int = #line, _ function:String = #function, _ file:String = #file){
+func logmark(_ mark:String="Potential Error here" ,_ line:Int = #line, _ function:String = #function, _ file:String = #file){
     print("\n\nFunction: \(function), line: \(line), Flie:\(file)")
     print("-----\(mark)----\n")
 }
 
-func logerr(_ message:Any, _ line:Int = #line, _ function:String = #function, _ file:String = #file){
+func logerr(_ message:Any?, _ line:Int = #line, _ function:String = #function, _ file:String = #file){
     print("\nError found at ===> : \nFlie:\(file)")
     print("Function: \(function), line: \(line)")
     print("\nError message: ")
-    print(message)
+    print(message as Any)
 }
 
 

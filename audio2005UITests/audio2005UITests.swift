@@ -36,6 +36,7 @@ class audio2005UITests: XCTestCase {
             //remove album, check
         let collectionView = app.collectionViews
 
+        app.buttons["Remove All"].tap()
         let firstChild = collectionView.children(matching:.any).element(boundBy: 0)
         XCTAssert(firstChild.exists)
         firstChild.tap()

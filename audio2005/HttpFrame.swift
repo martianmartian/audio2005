@@ -54,7 +54,7 @@ class HTTP{
 }
 
 extension HTTP{
-    
+
     static func prepReq(config:[String:AnyObject])->URLRequest{
         var url = URLComponents(string: config["root"] as! String)
         let them = (config["queries"] as? [String:AnyObject])!
