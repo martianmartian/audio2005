@@ -29,7 +29,7 @@ class FactoriesTests: XCTestCase {
     func testMainFactory_getFiles() {
         let expect = expectation(description: "Request should succeed")
         FactoryHttpInterface.getFiles(obj:["code":"323"]){ result in
-//            logvar("files result", result)
+            logvar("files result", result)
             expect.fulfill()
         }
         waitForExpectations(timeout: 3) { (error) in
@@ -43,6 +43,7 @@ class FactoriesTests: XCTestCase {
         FactoryHttpInterface.downloadOne(id:id){ localURL in
             XCTAssertNotNil(localURL)
             expect.fulfill()
+            //remove it after done!!!!!!!!!!!!!!!
         }
         waitForExpectations(timeout: 3) { (error) in
             XCTAssertNil(error)
@@ -50,7 +51,7 @@ class FactoriesTests: XCTestCase {
     }
     func testItemsFactory_downloadOne(){
         let item = [
-            "newOrNot":"0",
+            "newOrNot":"new",
             "itemId":"cd5b8ee5-b415-cb4b-cf8c-bfb97cbc62d8"
         ]
         let expect = expectation(description: "download one should work")
@@ -68,6 +69,8 @@ class FactoriesTests: XCTestCase {
             XCTAssertNil(error)
         }
     }
+    
+//    func testItems
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

@@ -63,9 +63,9 @@ class FactoryHttpInterface{
         
         Alamofire.download(remoteUrl, to: destination).response { response in
             
-            guard response.destinationURL != nil else {logmark() ;return}
             guard response.error == nil else{logerr(response); return}
-            
+            guard response.destinationURL != nil else {logmark() ;return}
+//            let str = response.destinationURL!.absoluteString
             setLocalURL(response.destinationURL!)
         }
     }

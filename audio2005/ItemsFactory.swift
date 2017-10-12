@@ -44,35 +44,37 @@ class ItemsFactory{
         
     }
     
-    static func triggerDownload(){
-        
-    }
-    static func downloadAllNew(){
-        
-    }
+
     
-    static func downloadAlbum(id:String){
-        //get the album by id
-        //loop through the album
-        //cache how many are being downloaded
-            //limit to 2 at the same tile
-        //downloadOne(item)
-        //downloadOne(item)  only the next, if there is
-            //remove it's own id from cache
-            //???recursively call this function until finished all?
-        
-    }
+//    static func downloadAlbum(id:String){ dismiss this one
+//        //get the album by id
+//        //loop through the items
+//        //cache how many are being downloaded
+//            //limit to 2 at the same tile
+//        //downloadOne(item)
+//        //downloadOne(item)  only the next, if there is
+//            //remove it's own id from cache
+//            //???recursively call this function until finished all?
+//        let items = ItemsFactory.getLocalItemsOf(albumId: id)
+//        for item in items{
+//            
+//        }
+//    }
 
     static var downloadingList = [String]()
     static func downloadOne(item:Dictionary<String,AnyObject>,fn:@escaping(_ localURL:URL)->()){
     /*
     //check if already downloaded: newOrOld
     //?? check if triggered twice???yes
+         
+         //cache how many are being downloaded
+         //limit to 2 at the same time
+         
     //if not in downloadinglist, add it
     //start downloading
          //callback(localURL):
     */
-        guard item["newOrNot"] as? String == "0" else{logmark("dup download attemped");return}
+        if (item["newOrOld"] as? String) == "old"{logmark("dup download attemped");return}
         guard let id = item[itemId] as? String else{logmark("empty item???");return}
         if(downloadingList.contains(id)==true){logmark("dup download-ing attemped");return}
         downloadingList.append(id)

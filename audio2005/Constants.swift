@@ -13,7 +13,7 @@ let db = UserDefaults.standard
 
 //local
 let albumKey    = "albums"
-let itemKey     = "items"
+let itemKey     = "items" // abolished
 //received
 let albumId     = "albumid"
 let itemId      = "itemId"

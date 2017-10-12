@@ -69,8 +69,5 @@ class audio2005UITests: XCTestCase {
         XCTAssertEqual(collectionView.cells.count, 1)
         
     }
-    func testIIVController(){
-
-    }
     
 }
