@@ -1,14 +1,8 @@
-//
-//  MainFactory.swift
-//  audio2005
-//
-//  Created by martian2049 on 10/8/17.
-//  Copyright © 2017 martian2049. All rights reserved.
-//
 
 import Foundation
 import Alamofire
 
+//ONLY HTTP INTERFACE !!!!!!!!!!!
 class FactoryHttpInterface{
     static func getFiles(obj:[String:String],fn:@escaping ([String: AnyObject])->()){
  
@@ -21,16 +15,6 @@ class FactoryHttpInterface{
         
     }
     
-    static func removeEverything(){
-        db.removeObject(forKey:albumKey)
-        
-    }
-    static func removeAlbum(id:String){
-        
-    }
-    static func removeOne(item:Dictionary<String,AnyObject>){
-        
-    }
     
     static func downloadOne(id:String,setLocalURL:@escaping (_ localURL: URL)->()){
         /* pseudo code: download single mp3 file.
@@ -65,7 +49,7 @@ class FactoryHttpInterface{
             
             guard response.error == nil else{logerr(response); return}
             guard response.destinationURL != nil else {logmark() ;return}
-//            let str = response.destinationURL!.absoluteString
+            //let str = response.destinationURL!.absoluteString
             setLocalURL(response.destinationURL!)
         }
     }

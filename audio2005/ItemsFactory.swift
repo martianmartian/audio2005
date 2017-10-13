@@ -44,7 +44,36 @@ class ItemsFactory{
         
     }
     
+    static func removeJustTheItem(item:Dictionary<String,AnyObject>){
+        //untested yet
+        if (item["newOrOld"] as! String) == "old" {removeMp3Of(item: item)}
+        //unfinished
+        
+    }
 
+    static func removeItemsOf(theAlbumId:String){
+        let items = ItemsFactory.getLocalItemsOf(albumId: theAlbumId)
+        for item in items{
+            removeMp3Of(item: item)
+        }
+        db.removeObject(forKey: albumId)
+    }
+    
+    static func removeMp3Of(item:Dictionary<String,AnyObject>){
+        
+        guard let urlstr = item["localURL"] as? String else {return}
+        let url = URL(string:urlstr)!
+        
+        if FileManager.default.fileExists(atPath: url.path){
+            do{
+                try FileManager.default.removeItem(at: url)
+            }
+            catch let error as NSError{print("\nerror--->: ",error.localizedDescription)}
+        }else{
+            logmark("not there")
+            logvar("url from absoluteString", url)
+        }
+    }
     
 //    static func downloadAlbum(id:String){ dismiss this one
 //        //get the album by id
@@ -61,26 +90,14 @@ class ItemsFactory{
 //        }
 //    }
 
-    static var downloadingList = [String]()
+
     static func downloadOne(item:Dictionary<String,AnyObject>,fn:@escaping(_ localURL:URL)->()){
-    /*
-    //check if already downloaded: newOrOld
-    //?? check if triggered twice???yes
-         
-         //cache how many are being downloaded
-         //limit to 2 at the same time
-         
-    //if not in downloadinglist, add it
-    //start downloading
-         //callback(localURL):
-    */
-        if (item["newOrOld"] as? String) == "old"{logmark("dup download attemped");return}
+    
         guard let id = item[itemId] as? String else{logmark("empty item???");return}
-        if(downloadingList.contains(id)==true){logmark("dup download-ing attemped");return}
-        downloadingList.append(id)
+        
         FactoryHttpInterface.downloadOne(id:id){ localURL in
             logvar("localURL", localURL)
-            downloadingList = downloadingList.filter {$0 != id}
+
             fn(localURL)
         }
     }

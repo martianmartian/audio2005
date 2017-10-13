@@ -11,8 +11,9 @@ class AlbumFactory{
         }
         return albums
     }
+    
     static func getLocalAlbumIds() -> [String]{
-        let ids = _u.pluck(data: getLocalAlbums(), key:albumKey)
+        let ids = _u.pluck(data: getLocalAlbums(), key:albumId)
         return ids
     }
     
@@ -40,6 +41,16 @@ class AlbumFactory{
         
     }
 
+    static func removeEverything(){
+        let albumIds = AlbumFactory.getLocalAlbumIds()
+        logvar("removing albumIds", albumIds)
+        for theAlbumId in albumIds{
+            ItemsFactory.removeItemsOf(theAlbumId: theAlbumId)
+        }
+        db.removeObject(forKey:albumKey)
+    }
+
+    
     static var downloadingList = [String]()
     static func downloadAll_r(){
         /* recursively download all items, 2 at a time
@@ -66,26 +77,30 @@ class AlbumFactory{
         */
         let albumIds = getLocalAlbumIds()
         for theAlbumId in albumIds{
-            var items = ItemsFactory.getLocalItemsOf(albumId: theAlbumId)
+            let items = ItemsFactory.getLocalItemsOf(albumId: theAlbumId)
+            logvar("items.count", items.count)
             for (index,item) in items.enumerated(){
+                var newItems = items  //to secure mutation
                 let theItemId = item[itemId] as! String
                 if (item["newOrOld"] as! String) == "old"{continue}
                 if (downloadingList.contains(theItemId)==true) {logmark("dup attemped, downloadAll_r");continue}
                 if downloadingList.count==2{return}
-                if downloadingList.count==0{downloadAll_r()}
-                if downloadingList.count==1{
-                    downloadingList.append(theItemId)
-                    ItemsFactory.downloadOne(item: item, fn: { localURL in
-                        var newItem = item
-                        newItem["newOrOld"] = "old" as AnyObject
-                        newItem["localURL"] = localURL as AnyObject
-                        items[index] = newItem
-                        db.set(items,forKey:theAlbumId)
-                        downloadingList = downloadingList.filter {$0 != theItemId}
-                        downloadAll_r()
-                    })
-                    return
-                }
+                if downloadingList.count==0{/*downloadAll_r()*/}
+                
+                downloadingList.append(theItemId)
+                logvar("downloadingList", downloadingList)
+                ItemsFactory.downloadOne(item: item, fn: { localURL in
+                    var newItem = item //to secure mutation
+                    newItem["newOrOld"] = "old" as AnyObject
+                    newItem["localURL"] = localURL.absoluteString as AnyObject
+                    
+                    newItems[index] = newItem
+                    db.set(newItems, forKey:theAlbumId)
+
+                    downloadingList = downloadingList.filter {$0 != theItemId}
+                    //downloadAll_r()
+                })
+                return
             }
             return
         }

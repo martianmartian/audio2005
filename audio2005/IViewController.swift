@@ -11,7 +11,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func removeAll(_ sender: UIButton) {
-        FactoryHttpInterface.removeEverything()
+        AlbumFactory.removeEverything()
         self.collectionView.reloadData()
     }
     override func loadView() {
@@ -67,6 +67,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
             AlbumFactory.updateLocalAlbums(data:data[albumKey])
             ItemsFactory.updateLocalItems(data:data)
             
+//            AlbumFactory.downloadAll_r()
 
 
             DispatchQueue.main.async{self.collectionView.reloadData()}

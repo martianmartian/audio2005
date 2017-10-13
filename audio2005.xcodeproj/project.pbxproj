@@ -8,25 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0A8FA8BC4797B1FD0A91A71C /* Pods_audio2005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB5B605D300D8797796D386 /* Pods_audio2005UITests.framework */; };
-		430617601F8A245E00432E69 /* HttpFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306175F1F8A245E00432E69 /* HttpFrameTests.swift */; };
 		430617681F8A484100432E69 /* MP3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617671F8A484100432E69 /* MP3Controller.swift */; };
 		4306176F1F8A58E100432E69 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306176E1F8A58E100432E69 /* components.swift */; };
 		430617711F8A64C400432E69 /* FactoryHttpInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617701F8A64C400432E69 /* FactoryHttpInterface.swift */; };
 		430617731F8A653800432E69 /* FactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617721F8A653800432E69 /* FactoriesTests.swift */; };
-		430FC98F1F8F0CAE0048F009 /* LibsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FC98E1F8F0CAE0048F009 /* LibsTests.swift */; };
 		432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432136DA1F8929880045F6A9 /* HttpFrame.swift */; };
 		433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433664E71F8CF41300944D1B /* audio2005UITests.swift */; };
 		433987221F8942600062FC07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433987211F8942600062FC07 /* Constants.swift */; };
 		433AA3FE1F8A0C1D00575567 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA3FD1F8A0C1D00575567 /* utils.swift */; };
 		433AA4001F8A217100575567 /* AlbumFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA3FF1F8A217100575567 /* AlbumFactory.swift */; };
 		433AA4021F8A21BA00575567 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA4011F8A21BA00575567 /* ItemsFactory.swift */; };
-		433AA4081F8A222E00575567 /* IVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA4071F8A222E00575567 /* IVCTests.swift */; };
+		43A657AC1F9057DE0026A2D9 /* AlbumFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A657AB1F9057DE0026A2D9 /* AlbumFactoryTests.swift */; };
 		43C737381F89215C0098D95A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737371F89215C0098D95A /* AppDelegate.swift */; };
 		43C7373A1F89215C0098D95A /* IViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737391F89215C0098D95A /* IViewController.swift */; };
 		43C7373D1F89215C0098D95A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C7373B1F89215C0098D95A /* Main.storyboard */; };
 		43C7373F1F89215C0098D95A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C7373E1F89215C0098D95A /* Assets.xcassets */; };
 		43C737421F89215C0098D95A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C737401F89215C0098D95A /* LaunchScreen.storyboard */; };
-		43C7374D1F89215C0098D95A /* audio2005Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7374C1F89215C0098D95A /* audio2005Tests.swift */; };
 		43C7375F1F8922380098D95A /* syslog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7375E1F8922380098D95A /* syslog.swift */; };
 		43C737621F8927070098D95A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737611F8927070098D95A /* Extensions.swift */; };
 		43F0C7DD1F8939A70091D790 /* IIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0C7DC1F8939A70091D790 /* IIViewController.swift */; };
@@ -56,7 +53,6 @@
 		017862782B41F1BFB74701BD /* Pods-audio2005UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0712EADAA1E7C9C9B770BF66 /* Pods-audio2005Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A072D663C3A1A7CBABF6C97 /* Pods-audio2005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005/Pods-audio2005.debug.xcconfig"; sourceTree = "<group>"; };
-		4306175F1F8A245E00432E69 /* HttpFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpFrameTests.swift; sourceTree = "<group>"; };
 		430617611F8A321400432E69 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		430617621F8A321400432E69 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		430617631F8A321400432E69 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
@@ -67,7 +63,6 @@
 		4306176E1F8A58E100432E69 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = components.swift; sourceTree = "<group>"; };
 		430617701F8A64C400432E69 /* FactoryHttpInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryHttpInterface.swift; sourceTree = "<group>"; };
 		430617721F8A653800432E69 /* FactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesTests.swift; sourceTree = "<group>"; };
-		430FC98E1F8F0CAE0048F009 /* LibsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibsTests.swift; sourceTree = "<group>"; };
 		432136DA1F8929880045F6A9 /* HttpFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpFrame.swift; sourceTree = "<group>"; };
 		433664E51F8CF41300944D1B /* audio2005UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audio2005UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		433664E71F8CF41300944D1B /* audio2005UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio2005UITests.swift; sourceTree = "<group>"; };
@@ -76,7 +71,7 @@
 		433AA3FD1F8A0C1D00575567 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		433AA3FF1F8A217100575567 /* AlbumFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFactory.swift; sourceTree = "<group>"; };
 		433AA4011F8A21BA00575567 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
-		433AA4071F8A222E00575567 /* IVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVCTests.swift; sourceTree = "<group>"; };
+		43A657AB1F9057DE0026A2D9 /* AlbumFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFactoryTests.swift; sourceTree = "<group>"; };
 		43C737341F89215C0098D95A /* audio2005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audio2005.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C737371F89215C0098D95A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43C737391F89215C0098D95A /* IViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +80,6 @@
 		43C737411F89215C0098D95A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C737431F89215C0098D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C737481F89215C0098D95A /* audio2005Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audio2005Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		43C7374C1F89215C0098D95A /* audio2005Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio2005Tests.swift; sourceTree = "<group>"; };
 		43C7374E1F89215C0098D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = audio2005Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		43C7375E1F8922380098D95A /* syslog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syslog.swift; sourceTree = "<group>"; };
 		43C737611F8927070098D95A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -158,36 +152,13 @@
 			path = audio2005UITests;
 			sourceTree = "<group>";
 		};
-		433AA4031F8A21D500575567 /* BasicsTests */ = {
-			isa = PBXGroup;
-			children = (
-				4306175F1F8A245E00432E69 /* HttpFrameTests.swift */,
-			);
-			path = BasicsTests;
-			sourceTree = "<group>";
-		};
-		433AA4041F8A21E200575567 /* LibsTests */ = {
-			isa = PBXGroup;
-			children = (
-				430FC98E1F8F0CAE0048F009 /* LibsTests.swift */,
-			);
-			path = LibsTests;
-			sourceTree = "<group>";
-		};
 		433AA4051F8A21EC00575567 /* FactoriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				43A657AB1F9057DE0026A2D9 /* AlbumFactoryTests.swift */,
 				430617721F8A653800432E69 /* FactoriesTests.swift */,
 			);
 			path = FactoriesTests;
-			sourceTree = "<group>";
-		};
-		433AA4061F8A21FF00575567 /* ControllersTests */ = {
-			isa = PBXGroup;
-			children = (
-				433AA4071F8A222E00575567 /* IVCTests.swift */,
-			);
-			path = ControllersTests;
 			sourceTree = "<group>";
 		};
 		43C7372B1F89215C0098D95A = {
@@ -232,11 +203,7 @@
 		43C7374B1F89215C0098D95A /* audio2005Tests */ = {
 			isa = PBXGroup;
 			children = (
-				433AA4061F8A21FF00575567 /* ControllersTests */,
 				433AA4051F8A21EC00575567 /* FactoriesTests */,
-				433AA4031F8A21D500575567 /* BasicsTests */,
-				433AA4041F8A21E200575567 /* LibsTests */,
-				43C7374C1F89215C0098D95A /* audio2005Tests.swift */,
 				43C7374E1F89215C0098D95A /* Info.plist */,
 			);
 			path = audio2005Tests;
@@ -627,11 +594,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				433AA4081F8A222E00575567 /* IVCTests.swift in Sources */,
+				43A657AC1F9057DE0026A2D9 /* AlbumFactoryTests.swift in Sources */,
 				430617731F8A653800432E69 /* FactoriesTests.swift in Sources */,
-				430617601F8A245E00432E69 /* HttpFrameTests.swift in Sources */,
-				43C7374D1F89215C0098D95A /* audio2005Tests.swift in Sources */,
-				430FC98F1F8F0CAE0048F009 /* LibsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

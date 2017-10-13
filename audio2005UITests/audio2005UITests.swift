@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import audio2005
 
 class audio2005UITests: XCTestCase {
     
@@ -47,16 +46,16 @@ class audio2005UITests: XCTestCase {
         let textField = app.textFields["code"]
         XCTAssert(textField.exists)
 
-        textField.typeText("323")
+        textField.typeText("836")
         let action = app.buttons["OK"]
         XCTAssert(action.exists)
         action.tap()
 
 
-        sleep(3)
-        XCTAssertEqual(collectionView.cells.count, 2)
+        sleep(1)
+        XCTAssertNotEqual(collectionView.cells.count, 1)
         collectionView.cells.element(boundBy: 1).tap()
-        
+
         let firstrow = app.tables.children(matching:.any).element(boundBy: 0)
         XCTAssert(firstrow.exists)
         
