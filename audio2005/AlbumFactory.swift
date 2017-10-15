@@ -43,7 +43,8 @@ class AlbumFactory{
 
     static func removeEverything(){
         let albumIds = AlbumFactory.getLocalAlbumIds()
-        logvar("removing albumIds", albumIds)
+        logvar("😈😈😈removing albumIds", albumIds)
+
         for theAlbumId in albumIds{
             ItemsFactory.removeItemsOf(theAlbumId: theAlbumId)
         }
@@ -51,6 +52,8 @@ class AlbumFactory{
     }
 
     
+    static var testing_block = false
+    static var downloading_r = true
     static var downloadingList = [String]()
     static func downloadAll_r(){
         /* recursively download all items, 2 at a time
@@ -76,33 +79,36 @@ class AlbumFactory{
             return
         */
         let albumIds = getLocalAlbumIds()
+        logvar("albumIds:🍀🍀🍀🍀🍀🍀🍀🍀", albumIds)
         for theAlbumId in albumIds{
             let items = ItemsFactory.getLocalItemsOf(albumId: theAlbumId)
-            logvar("items.count", items.count)
+            logone("items.count 🍀🍀", items.count, active:testing_block)
+            logone("theAlbumId 🍀🍀", theAlbumId, active:testing_block)
+            var newItems = items
             for (index,item) in items.enumerated(){
-                var newItems = items  //to secure mutation
+                if downloadingList.count==2{logmark("inside💛 max downloading allowed ");return}
+                if (item["newOrOld"] as! String) == "old"{
+                    logone("pass old🍋🍋🍋",item[itemId] as! String, active:testing_block)
+                    continue
+                }
                 let theItemId = item[itemId] as! String
-                if (item["newOrOld"] as! String) == "old"{continue}
-                if (downloadingList.contains(theItemId)==true) {logmark("dup attemped, downloadAll_r");continue}
-                if downloadingList.count==2{return}
-                if downloadingList.count==0{/*downloadAll_r()*/}
-                
+                if (downloadingList.contains(theItemId)==true) {logmark("dup concurrency attemped🍋🍋🍋");continue}
                 downloadingList.append(theItemId)
-                logvar("downloadingList", downloadingList)
-                ItemsFactory.downloadOne(item: item, fn: { localURL in
+                logone("💚💚new attempt item: ", theItemId)
+                logone("downloadingList", downloadingList,"\n")
+                ItemsFactory.downloadOne(item:item){localIdentity in
                     var newItem = item //to secure mutation
                     newItem["newOrOld"] = "old" as AnyObject
-                    newItem["localURL"] = localURL.absoluteString as AnyObject
+                    newItem["localIdentity"] = localIdentity as AnyObject
+                    logvar("✅✅✅✅successfully downloaded:",localIdentity)
                     
                     newItems[index] = newItem
                     db.set(newItems, forKey:theAlbumId)
-
+                    
                     downloadingList = downloadingList.filter {$0 != theItemId}
-                    //downloadAll_r()
-                })
-                return
+                    if downloading_r{downloadAll_r()}
+                }
             }
-            return
         }
     }
 }

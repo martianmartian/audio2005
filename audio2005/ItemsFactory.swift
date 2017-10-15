@@ -21,18 +21,25 @@ class ItemsFactory{
         guard let data = data else { logmark() ;return}
         guard let gotAlbums = data[albumKey] as? [Dictionary<String, AnyObject>] else { logmark() ;return}
         
-        let albumIds = AlbumFactory.getLocalAlbumIds()
-        for album in gotAlbums{
+        //itemsOfGotAlbum
+        let gotAlbumsIds = _u.pluck(data: gotAlbums, key: albumId)
+        for theid in gotAlbumsIds{
             //here it disable the website from deleting item;
             //so it only put in the new ones, check if missing item, and skip this step
             
-            guard let theid = album[albumId] as? String else {logmark();continue}
-            
-            if albumIds.contains(theid) {
+            if var oldItemsArr = db.value(forKey: theid) as? [Dictionary<String,AnyObject>]{
                 // case: stricly UPDATING the album. theid already exist.
                 // get a list of item ids outside this loop.
                 // check items of each album and only put in new ones.
                 // watch out for more potential problems.
+                let oldItemsIds = _u.pluck(data: oldItemsArr, key: itemId)
+                guard let newItems = data[theid] as? [Dictionary<String,AnyObject>] else {continue}
+                for newItem in newItems{
+                    guard let newItemId = newItem[itemId] as? String else {continue}
+                    if oldItemsIds.contains(newItemId){continue}
+                    oldItemsArr.append(newItem)
+                }
+                db.set(oldItemsArr,forKey:theid)
             }else{
                 // case: it's new album, set without dup check
                 guard let albumItems = data[theid] as? [Dictionary<String,AnyObject>] else{logmark();continue}
@@ -56,22 +63,24 @@ class ItemsFactory{
         for item in items{
             removeMp3Of(item: item)
         }
-        db.removeObject(forKey: albumId)
+        db.removeObject(forKey: theAlbumId)
     }
-    
+
+
     static func removeMp3Of(item:Dictionary<String,AnyObject>){
         
-        guard let urlstr = item["localURL"] as? String else {return}
-        let url = URL(string:urlstr)!
-        
-        if FileManager.default.fileExists(atPath: url.path){
+        guard let localIdentity = item["localIdentity"] as? String else {logmark("bug 👾👾👾 or un-downloaded? 🔵"); return}
+
+        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
+
+        if FileManager.default.fileExists(atPath: localURL.path){
             do{
-                try FileManager.default.removeItem(at: url)
+                try FileManager.default.removeItem(at: localURL)
             }
             catch let error as NSError{print("\nerror--->: ",error.localizedDescription)}
         }else{
             logmark("not there")
-            logvar("url from absoluteString", url)
+            logvar("localURL.path", localURL.path)
         }
     }
     
@@ -91,14 +100,14 @@ class ItemsFactory{
 //    }
 
 
-    static func downloadOne(item:Dictionary<String,AnyObject>,fn:@escaping(_ localURL:URL)->()){
-    
-        guard let id = item[itemId] as? String else{logmark("empty item???");return}
+    static func downloadOne(item:Dictionary<String,AnyObject>,fn:@escaping(_ localIdentity:String)->()){
         
-        FactoryHttpInterface.downloadOne(id:id){ localURL in
-            logvar("localURL", localURL)
+        guard let id = item[itemId] as? String else{logmark("empty item???👾👾👾");return}
+        //logvar("id⁉️", id)
+        FactoryHttpInterface.downloadOne(id:id){ localIdentity in
+            logvar("localIdentity", localIdentity)
 
-            fn(localURL)
+            fn(localIdentity)
         }
     }
     

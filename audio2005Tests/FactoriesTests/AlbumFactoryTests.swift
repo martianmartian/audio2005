@@ -16,47 +16,69 @@ class AlbumFactoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
     override func tearDown() {
-        // Put teardown code  here. This method is called after the invocation of each test method in the class.
-//        AlbumFactory.removeEverything()
-//        let albumIds = AlbumFactory.getLocalAlbumIds()
-//        XCTAssertEqual(albumIds.count, 0)
-        
         super.tearDown()
     }
-    
-    func testAlbum_Download_Remove() {
-        
-        AlbumFactory.removeEverything()
-        let albumIds = AlbumFactory.getLocalAlbumIds()
-        XCTAssertEqual(albumIds.count, 0)
+    func testFiles_Download() {
 
-        let expect = expectation(description: "Request should succeed")
+        let expect = expectation(description: "File Download should work")
         FactoryHttpInterface.getFiles(obj:["code":"836"]){ data in
             //logvar("files result", data)
-            expect.fulfill()
 
             AlbumFactory.updateLocalAlbums(data:data[albumKey])
             ItemsFactory.updateLocalItems(data:data)
 
-            sleep(1)
             let albumIds = AlbumFactory.getLocalAlbumIds()
             XCTAssertNotEqual(albumIds.count, 0)
             let itemsIdsOfAlbum = ItemsFactory.getLocalItemsOf(albumId: albumIds[0])
             XCTAssertNotEqual(itemsIdsOfAlbum.count, 0)
 
-            AlbumFactory.downloadAll_r()
-            sleep(5)
-
+            expect.fulfill()
         }
-        waitForExpectations(timeout: 1) { (error) in
+        waitForExpectations(timeout: 3) { (error) in
             XCTAssertNil(error)
         }
 
     }
+    func testMp3_Download(){
+        
+        AlbumFactory.testing_block=true
+        AlbumFactory.downloading_r=true
+        AlbumFactory.downloadAll_r()
+        
+        let expect = expectation(description: "Check MP3 download")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            let howmany1 = _u.countMP3atRoot()
+            XCTAssertNotEqual(howmany1, 0)
+            XCTAssertEqual(howmany1, 7)
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5) { (error) in
+            XCTAssertNil(error)
+        }
+    }
     
+    func testRemove(){
+        
+        AlbumFactory.removeEverything()
+        let albumIds = AlbumFactory.getLocalAlbumIds()
+        XCTAssertEqual(albumIds.count, 0)
+        
+        let howmany0 = _u.countMP3atRoot()
+        XCTAssertEqual(howmany0, 0)
+        
+    }
     
 }
+
+
+
+
+
+
+
+
+
+

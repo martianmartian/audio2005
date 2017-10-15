@@ -16,7 +16,7 @@ class FactoryHttpInterface{
     }
     
     
-    static func downloadOne(id:String,setLocalURL:@escaping (_ localURL: URL)->()){
+    static func downloadOne(id:String,setLocalURL:@escaping (_ localURL: String)->()){
         /* pseudo code: download single mp3 file.
          remote url + id
          local destinationUrl
@@ -35,25 +35,32 @@ class FactoryHttpInterface{
         
         let remoteUrl = _u.makeQueryURL(root: urlRoot + "get_mp3", queries: ["id":id])
 
-        let docDirURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let destinationUrl = docDirURL.appendingPathComponent(id+".mp3")
-        guard !FileManager.default.fileExists(atPath: destinationUrl.path) else{
-            logmark("find out why it's duplicated? ")
-            setLocalURL(destinationUrl); return
+        let localIdentity = id+".mp3"
+        
+        let destinationUrl = _u.getLocalURLFrom(localIdentity: localIdentity)
+        
+        if FileManager.default.fileExists(atPath: destinationUrl.path){
+            logmark("find out why it's duplicated? ❓")
+            setLocalURL(localIdentity); return
         }
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             return (destinationUrl, [.removePreviousFile, .createIntermediateDirectories])
+//            return (destinationUrl, [])
         }
-        
-        Alamofire.download(remoteUrl, to: destination).response { response in
-            
+        logvar("destinationUrl🤞🤞🤞🤞", destinationUrl)
+        logvar("remoteUrl 🤞", remoteUrl)
+        Alamofire.download(remoteUrl, to: destination).response {response in
+            loghere()
             guard response.error == nil else{logerr(response); return}
             guard response.destinationURL != nil else {logmark() ;return}
             //let str = response.destinationURL!.absoluteString
-            setLocalURL(response.destinationURL!)
+            setLocalURL(localIdentity)
         }
     }
    
     
-    
 }
+
+
+
+

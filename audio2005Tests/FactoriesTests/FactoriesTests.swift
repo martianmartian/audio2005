@@ -35,16 +35,20 @@ class FactoriesTests: XCTestCase {
     func testInterFace_downloadOne(){
         let expect = expectation(description: "download one should work")
         let id = "cd5b8ee5-b415-cb4b-cf8c-bfb97cbc62d8"
-        
-        FactoryHttpInterface.downloadOne(id:id){ localURL in
-            logvar("localURL", localURL)
-            XCTAssertNotNil(localURL)
+        let itemProto = [
+            "newOrOld":"new",
+            "itemId":"cd5b8ee5-b415-cb4b-cf8c-bfb97cbc62d8"
+        ]
+        var item = itemProto as [String:AnyObject]
+        FactoryHttpInterface.downloadOne(id:id){ localIdentity in
+            logvar("localURL🍷🍷🍷", localIdentity)
+            XCTAssertNotNil(localIdentity)
             expect.fulfill()
 
             //remove it after done!!!!!!!!!!!!!!!
-            var item = Dictionary<String,AnyObject>()
-            item["localURL"] = localURL as AnyObject
+            item["localIdentity"] = localIdentity as AnyObject
             ItemsFactory.removeMp3Of(item:item)
+            let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
             XCTAssertFalse(FileManager.default.fileExists(atPath:localURL.path))
         }
         waitForExpectations(timeout: 3) { (error) in
@@ -58,22 +62,18 @@ class FactoriesTests: XCTestCase {
         ]
         var item = itemProto as [String:AnyObject]
         let expect = expectation(description: "download one should work")
-        ItemsFactory.downloadOne(item:item){localURL in
-            logvar("localURL", localURL)
-            XCTAssertNotNil(localURL)
+        ItemsFactory.downloadOne(item:item){localIdentity in
+            logvar("localIdentity🍷🍷🍷", localIdentity)
+            XCTAssertNotNil(localIdentity)
             expect.fulfill()
             
             //remove it after done!!!!!!!!!!!!!!!
-            item["localURL"] = localURL.absoluteString as AnyObject
+            item["localIdentity"] = localIdentity as AnyObject
             ItemsFactory.removeMp3Of(item:item)
+            let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
             XCTAssertFalse(FileManager.default.fileExists(atPath:localURL.path))
         }
-        /* test of duplicated download. don't remove
-        ItemsFactory.downloadOne(item:item as [String:AnyObject]){localURL in
-            logvar("localURL", localURL)
-            XCTAssertNotNil(localURL)
-        }
-        */
+        
         waitForExpectations(timeout: 3) { (error) in
             XCTAssertNil(error)
         }
