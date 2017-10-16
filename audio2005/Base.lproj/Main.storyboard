@@ -112,7 +112,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyQ-ri-ZgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="dLt-T5-3be">
                     <connections>
-                        <segue destination="Zhk-H7-J0B" kind="show" identifier="toSecond" animates="NO" id="vND-na-2m3"/>
+                        <segue destination="Zhk-H7-J0B" kind="show" identifier="oneTotwo" animates="NO" id="vND-na-2m3"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -166,12 +166,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J53-ck-2o0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="wBH-Wt-FNi">
                     <connections>
-                        <segue destination="SMP-Qx-S34" kind="show" animates="NO" id="jPj-LQ-fMc"/>
+                        <segue destination="SMP-Qx-S34" kind="show" identifier="twoTothree" animates="NO" id="jPj-LQ-fMc"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="fVU-bz-hdn">
                     <connections>
-                        <segue destination="WPW-5c-qtA" kind="show" animates="NO" id="Iug-qU-36B"/>
+                        <segue destination="WPW-5c-qtA" kind="show" identifier="twoToone" animates="NO" id="Iug-qU-36B"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -204,7 +204,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ouq-HD-dGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="5wl-Md-sTq">
                     <connections>
-                        <segue destination="Zhk-H7-J0B" kind="show" animates="NO" id="9qd-KG-Sr4"/>
+                        <segue destination="Zhk-H7-J0B" kind="show" identifier="threeTotwo" animates="NO" id="9qd-KG-Sr4"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

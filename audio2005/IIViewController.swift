@@ -37,10 +37,15 @@ class IIViewController: UIViewController, UITableViewDataSource, UITableViewDele
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //indexPath.row
-//        MP3.selectedItem(tappedItemIndex:tappedItemIndex)
-//        // always to switch view the third
-//        self.performSegue(withIdentifier: "toThird", sender: self)
+        let item = viewItems[indexPath.row]
+
+        if (item["newOrOld"] as? String) == "new" {
+            logmark("not permitted 👾");
+            AlbumFactory.downloadAll_r()
+            return
+        }// start downloading?
+        MP3.outlet = item
+        self.performSegue(withIdentifier: "twoTothree", sender: self)
     }
     
     

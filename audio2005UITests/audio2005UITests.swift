@@ -20,7 +20,7 @@ class audio2005UITests: XCTestCase {
         app.launch()
     }
     
-    func testFiles_Download(){
+    func testFlowOne_FilesDownload(){
 
         let firstChild = app.collectionViews.children(matching:.any).element(boundBy: 0)
         let img = app.images["0"]
@@ -60,16 +60,20 @@ class audio2005UITests: XCTestCase {
         }
 
     }
-
-    func testSecondView(){
+    
+    func testFlowTwo_noDownload(){
         app.collectionViews.cells.element(boundBy: 2).tap()
-
+        
         let firstrow = app.tables.children(matching:.any).element(boundBy: 0)
         XCTAssert(firstrow.exists)
-
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.swipeRight()
+        
+        firstrow.tap()
+        let thirdVLabel = app.staticTexts["3"]
+        XCTAssert(thirdVLabel.exists)
+        //app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.swipeRight()
     }
-
+    
+    
     func testRemove(){
 
         let deletebutton = app.buttons["Remove All"]

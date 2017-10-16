@@ -51,7 +51,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
             guard let chosenAlbumId = Albums[index]["albumid"] as? String else {return}
             AlbumFactory.viewAlbumId = chosenAlbumId
             logmark("Going to album: \(chosenAlbumId)")
-            self.performSegue(withIdentifier: "toSecond", sender: self)
+            self.performSegue(withIdentifier: "oneTotwo", sender: self)
         }else{logmark("index out of range, what's wrong?")}
         
     }
