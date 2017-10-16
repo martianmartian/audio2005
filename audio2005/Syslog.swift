@@ -14,6 +14,7 @@ func logone( _ args:Any... , active:Bool=true){
         for arg: Any in args {
             print(arg, terminator:"")
         }
+        print("\n", terminator:"")
     }
 }
 

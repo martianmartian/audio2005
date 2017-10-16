@@ -18,55 +18,66 @@ class audio2005UITests: XCTestCase {
         continueAfterFailure = false
 
         app.launch()
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
-        super.tearDown()
-    }
-    
-    
-    func testFlow() {
-        //Rount one:
-            //launch
-            //get album, check
-            //remove album, check
-        let collectionView = app.collectionViews
+    func testFiles_Download(){
 
-        app.buttons["Remove All"].tap()
-        let firstChild = collectionView.children(matching:.any).element(boundBy: 0)
+        let firstChild = app.collectionViews.children(matching:.any).element(boundBy: 0)
+        let img = app.images["0"]
+        XCTAssert(img.exists)
         XCTAssert(firstChild.exists)
         firstChild.tap()
-
+        
         let thealert = app.staticTexts["For Sync"]
         XCTAssert(thealert.exists)
-
+        
         let textField = app.textFields["code"]
         XCTAssert(textField.exists)
-
+        
         textField.typeText("836")
         let action = app.buttons["OK"]
         XCTAssert(action.exists)
         action.tap()
-
-
         sleep(1)
-        XCTAssertNotEqual(collectionView.cells.count, 1)
-        collectionView.cells.element(boundBy: 1).tap()
+        //after file download, the collection should be 2
+        XCTAssertNotEqual(app.collectionViews.cells.count, 1)
+    }
+
+    
+    func testMp3_Download(){
+
+        let downloadbutton = app.buttons["Download All"]
+        XCTAssert(downloadbutton.exists)
+        downloadbutton.tap()
+
+        let expect = expectation(description: "Check MP3 download")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            expect.fulfill()
+        }
+
+        waitForExpectations(timeout: 5) { (error) in
+            XCTAssertNil(error)
+        }
+
+    }
+
+    func testSecondView(){
+        app.collectionViews.cells.element(boundBy: 2).tap()
 
         let firstrow = app.tables.children(matching:.any).element(boundBy: 0)
         XCTAssert(firstrow.exists)
-        
-        
-        
-        
+
         app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.swipeRight()
+    }
+
+    func testRemove(){
+
+        let deletebutton = app.buttons["Remove All"]
+        XCTAssert(deletebutton.exists)
+        deletebutton.tap()
         
-        app.buttons["Remove All"].tap()
-        XCTAssertEqual(collectionView.cells.count, 1)
-        
+        XCTAssertEqual(app.collectionViews.cells.count, 1)
+
     }
     
 }

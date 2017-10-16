@@ -14,10 +14,16 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
         AlbumFactory.removeEverything()
         self.collectionView.reloadData()
     }
+    
+    
+    @IBAction func download_r(_ sender: UIButton) {
+        AlbumFactory.testing_block=true
+        AlbumFactory.downloading_r=true
+        AlbumFactory.downloadAll_r()
+    }
     override func loadView() {
         super.loadView()
         //logvar("Albums.count", Albums.count)
-        
     }
     
     //Mark: View Display and interaction
@@ -26,7 +32,7 @@ class IViewController: UIViewController, UICollectionViewDataSource,UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let albumCell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as! albumCell
         albumCell.albumImage.image = UIImage(named: albumCovers[indexPath.row])
-        albumCell.imageLabel.text = albumCovers[indexPath.row]
+        albumCell.imageLabel.text = albumCovers[indexPath.row] //should be album name
         albumCell.isUserInteractionEnabled=true
 
         return albumCell

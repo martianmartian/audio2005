@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-RR-TlV">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-RR-TlV">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="2M7-O0-Vce"/>
@@ -75,8 +75,16 @@
                                     <outlet property="delegate" destination="WPW-5c-qtA" id="Uis-6H-0Zt"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnE-in-gWx">
+                                <rect key="frame" x="57" y="396" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Download All"/>
+                                <connections>
+                                    <action selector="download_r:" destination="WPW-5c-qtA" eventType="touchUpInside" id="agZ-yb-7yO"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kog-lS-rX6">
-                                <rect key="frame" x="95" y="298" width="76" height="30"/>
+                                <rect key="frame" x="64" y="350" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Remove All"/>
                                 <connections>
@@ -87,8 +95,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="TYS-Q8-bmz" firstAttribute="top" secondItem="sIo-WG-HGU" secondAttribute="top" constant="8" id="Br4-Ai-wGb"/>
                             <constraint firstItem="TYS-Q8-bmz" firstAttribute="leading" secondItem="sIo-WG-HGU" secondAttribute="leading" constant="15" id="DAB-kp-eBO"/>
+                            <constraint firstItem="TYS-Q8-bmz" firstAttribute="top" secondItem="sIo-WG-HGU" secondAttribute="top" constant="8" id="FiD-KM-knQ"/>
                             <constraint firstItem="sIo-WG-HGU" firstAttribute="bottom" secondItem="TYS-Q8-bmz" secondAttribute="bottom" id="dMl-uK-rhQ"/>
                             <constraint firstItem="sIo-WG-HGU" firstAttribute="trailing" secondItem="TYS-Q8-bmz" secondAttribute="trailing" constant="15" id="k1Y-89-Gn2"/>
                         </constraints>

@@ -18,10 +18,21 @@ class IIViewController: UIViewController, UITableViewDataSource, UITableViewDele
         //logvar("viewItems", viewItems)
     }
     
+    func swichColor(_ t:AnyObject?)->UIColor{
+        guard let type = t as? String else {return UIColor.black}
+        switch type {
+        case "new":
+            return UIColor.cyan
+        default:
+            return UIColor.black
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return viewItems.count }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
-        cell.textLabel?.text = viewItems[indexPath.row]["itemName"] as? String
+        let item = viewItems[indexPath.row]
+        cell.textLabel?.text = item["itemName"] as? String
+        cell.textLabel?.textColor = swichColor(item["newOrOld"])
         cell.isUserInteractionEnabled=true
         return cell
     }

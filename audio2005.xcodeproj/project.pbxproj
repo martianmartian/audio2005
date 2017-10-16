@@ -53,12 +53,6 @@
 		017862782B41F1BFB74701BD /* Pods-audio2005UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0712EADAA1E7C9C9B770BF66 /* Pods-audio2005Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A072D663C3A1A7CBABF6C97 /* Pods-audio2005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005/Pods-audio2005.debug.xcconfig"; sourceTree = "<group>"; };
-		430617611F8A321400432E69 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		430617621F8A321400432E69 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		430617631F8A321400432E69 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
-		430617641F8A321400432E69 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
-		430617651F8A321400432E69 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
-		430617661F8A321400432E69 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		430617671F8A484100432E69 /* MP3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3Controller.swift; sourceTree = "<group>"; };
 		4306176E1F8A58E100432E69 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = components.swift; sourceTree = "<group>"; };
 		430617701F8A64C400432E69 /* FactoryHttpInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryHttpInterface.swift; sourceTree = "<group>"; };
@@ -191,7 +185,6 @@
 				43F0C7DA1F892F160091D790 /* Factories */,
 				432136D91F8929670045F6A9 /* Basics */,
 				43C7375C1F8921F10098D95A /* Libs */,
-				43FECB0F1F89416700FC0DF5 /* Assets */,
 				43C737631F8927400098D95A /* Supports */,
 				43C7373B1F89215C0098D95A /* Main.storyboard */,
 				43C7373E1F89215C0098D95A /* Assets.xcassets */,
@@ -247,19 +240,6 @@
 				430617671F8A484100432E69 /* MP3Controller.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		43FECB0F1F89416700FC0DF5 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				430617651F8A321400432E69 /* 0.png */,
-				430617661F8A321400432E69 /* 1.jpg */,
-				430617611F8A321400432E69 /* 2.jpg */,
-				430617621F8A321400432E69 /* 3.jpg */,
-				430617631F8A321400432E69 /* 4.jpg */,
-				430617641F8A321400432E69 /* 5.jpg */,
-			);
-			name = Assets;
 			sourceTree = "<group>";
 		};
 		E7ABE9FD5ABAFDD60F7762EA /* Frameworks */ = {
