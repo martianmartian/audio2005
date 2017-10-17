@@ -19,3 +19,6 @@ let albumId     = "albumid"
 let itemId      = "itemId"
 
 let urlRoot = ["http://localhost:5000/","http://47.94.175.93:5000/"][0]
+
+let loopTypes = ["one","loop","shuffle","none"]
+

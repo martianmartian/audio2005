@@ -51,9 +51,9 @@ class AlbumFactory{
         db.removeObject(forKey:albumKey)
     }
 
-    
+
     static var testing_block = false
-    static var downloading_r = false
+    static var downloading_r = true
     static var downloadingList = [String]()
     static func downloadAll_r(){
         /* recursively download all items, 2 at a time

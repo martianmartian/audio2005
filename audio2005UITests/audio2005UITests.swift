@@ -61,7 +61,7 @@ class audio2005UITests: XCTestCase {
 
     }
     
-    func testFlowTwo_noDownload(){
+    func testFlowTwo_noMP3(){
         app.collectionViews.cells.element(boundBy: 2).tap()
         
         let firstrow = app.tables.children(matching:.any).element(boundBy: 0)

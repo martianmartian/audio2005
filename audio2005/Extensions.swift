@@ -10,24 +10,6 @@
 
 import Foundation
 
-extension Array{
-    func prevIndex(_ index: Int) -> Int?{
-        if self.count==0 {return nil}
-        var prevIndex : Int
-        if index==0 {prevIndex=0}
-        else{prevIndex = index-1}
-        
-        return prevIndex
-    }
-    func nextIndex(_ index: Int) -> Int?{
-        if self.count==0 {return nil}
-        var nextIndex : Int
-        if index==self.count-1 {nextIndex = self.count-1}
-        else{nextIndex = index+1}
-        
-        return nextIndex
-    }
-}
 
 extension URL {
     static func help(_ which:String?=nil){

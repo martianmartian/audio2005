@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A8FA8BC4797B1FD0A91A71C /* Pods_audio2005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB5B605D300D8797796D386 /* Pods_audio2005UITests.framework */; };
+		430244791F94C44D00874826 /* audio2005UITestsII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430244781F94C44D00874826 /* audio2005UITestsII.swift */; };
+		4302447B1F958F2800874826 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4302447A1F958F2800874826 /* ArrayExtensions.swift */; };
 		430617681F8A484100432E69 /* MP3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617671F8A484100432E69 /* MP3Controller.swift */; };
 		4306176F1F8A58E100432E69 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306176E1F8A58E100432E69 /* components.swift */; };
 		430617711F8A64C400432E69 /* FactoryHttpInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617701F8A64C400432E69 /* FactoryHttpInterface.swift */; };
@@ -53,6 +55,8 @@
 		017862782B41F1BFB74701BD /* Pods-audio2005UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0712EADAA1E7C9C9B770BF66 /* Pods-audio2005Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A072D663C3A1A7CBABF6C97 /* Pods-audio2005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005/Pods-audio2005.debug.xcconfig"; sourceTree = "<group>"; };
+		430244781F94C44D00874826 /* audio2005UITestsII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio2005UITestsII.swift; sourceTree = "<group>"; };
+		4302447A1F958F2800874826 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		430617671F8A484100432E69 /* MP3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3Controller.swift; sourceTree = "<group>"; };
 		4306176E1F8A58E100432E69 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = components.swift; sourceTree = "<group>"; };
 		430617701F8A64C400432E69 /* FactoryHttpInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryHttpInterface.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			children = (
 				432136DA1F8929880045F6A9 /* HttpFrame.swift */,
 				43C737611F8927070098D95A /* Extensions.swift */,
+				4302447A1F958F2800874826 /* ArrayExtensions.swift */,
 			);
 			name = Basics;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				433664E71F8CF41300944D1B /* audio2005UITests.swift */,
+				430244781F94C44D00874826 /* audio2005UITestsII.swift */,
 				433664E91F8CF41300944D1B /* Info.plist */,
 			);
 			path = audio2005UITests;
@@ -186,8 +192,8 @@
 				432136D91F8929670045F6A9 /* Basics */,
 				43C7375C1F8921F10098D95A /* Libs */,
 				43C737631F8927400098D95A /* Supports */,
-				43C7373B1F89215C0098D95A /* Main.storyboard */,
 				43C7373E1F89215C0098D95A /* Assets.xcassets */,
+				43C7373B1F89215C0098D95A /* Main.storyboard */,
 				43C737401F89215C0098D95A /* LaunchScreen.storyboard */,
 			);
 			path = audio2005;
@@ -335,6 +341,11 @@
 					43C737331F89215C0098D95A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					43C737471F89215C0098D95A = {
 						CreatedOnToolsVersion = 9.0;
@@ -546,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */,
+				430244791F94C44D00874826 /* audio2005UITestsII.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C7373A1F89215C0098D95A /* IViewController.swift in Sources */,
+				4302447B1F958F2800874826 /* ArrayExtensions.swift in Sources */,
 				43C7375F1F8922380098D95A /* syslog.swift in Sources */,
 				43F0C7DD1F8939A70091D790 /* IIViewController.swift in Sources */,
 				433AA4021F8A21BA00575567 /* ItemsFactory.swift in Sources */,

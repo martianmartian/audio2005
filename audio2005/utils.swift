@@ -10,6 +10,10 @@ import Foundation
 
 class _u{
     
+    static func random(_ n:Int) -> Int
+    {
+        return Int(arc4random_uniform(UInt32(n)))
+    }
     
     /**
      setTimeout()
