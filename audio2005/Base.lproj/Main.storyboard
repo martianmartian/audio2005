@@ -220,7 +220,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="startPlay:" destination="SMP-Qx-S34" eventType="touchUpInside" id="3uC-xc-d02"/>
+                                    <action selector="togglePlay:" destination="SMP-Qx-S34" eventType="touchUpInside" id="YHM-Zj-ZYZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6d-ni-J8F">

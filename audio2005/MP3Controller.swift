@@ -1,13 +1,13 @@
 
+import UIKit
 import AVFoundation
 import MediaPlayer
-//AVAudioPlayerDelegate
 
-class MP3:NSObject,AVAudioPlayerDelegate{
-    static var player: AVAudioPlayer?
+
+class MP3 {
+    
     static var loop = loopTypes[0]
-    
-    
+    static var OnlyOnce = false
     
     static var playingItem = Dictionary<String, AnyObject>() //King
     static var outlet : Dictionary<String,AnyObject>{ //Guard of king, only outlet of this class
@@ -18,7 +18,8 @@ class MP3:NSObject,AVAudioPlayerDelegate{
             //check if duplicated
             if playingItemId == (item[itemId] as! String){return}
             //all other conditions
-            resetPlayer(item:item)
+            playingItem = item
+            OnlyOnce = true
         }
     }
     static var playingAlbumId : String{
@@ -41,33 +42,37 @@ class MP3:NSObject,AVAudioPlayerDelegate{
         return index
     }
     
-    
-    static func togglePlay(){
-        if player == nil { logmark("trying to play empty list");return}
-        if (player?.isPlaying)!{ player?.pause() } else { player?.play() }
+    static func validCheck(item:Dictionary<String, AnyObject>)->Bool{
+        
+        if (item["newOrOld"] as? String) == "new" {logmark("not permitted 👾"); return false}
+        guard let localIdentity = item["localIdentity"] as? String else {logmark("not permitted 👾👾"); return false}
+        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
+        if !FileManager.default.fileExists(atPath: localURL.path){logmark("not permitted 👾👾👾"); return false}
+        
+        return true
     }
-    static func playPre(){
-        if player == nil { logmark("trying to play empty list");return}
-        let nowItemIndex = playingItemIndex
+    
+    static func stagePre(){
+        let nowItemIndex = MP3.playingItemIndex
         if nowItemIndex == 0{return}
         let go = nowItemIndex - 1
-        outlet = playingItems[go]
+        MP3.outlet = MP3.playingItems[go]
     }
-    @objc static func playNext(){
-        if player == nil { logmark("trying to play empty list");return}
-        let nowItemIndex = playingItemIndex
+    static func stageNext(){
+        let nowItemIndex = MP3.playingItemIndex
         guard let go = switchNext(nowItemIndex) else {return}
-        outlet = playingItems[go]
+        MP3.outlet = MP3.playingItems[go]
     }
+    
     static func switchNext(_ i:Int)->Int?{
         switch loop {
         case loopTypes[0]: //one
             return i
         case loopTypes[1]: //loop
-            if i == playingItems.count-1{return nil}
+            if i == MP3.playingItems.count-1{return nil}
             return i+1
         case loopTypes[2]: //shuffle
-            return _u.random(playingItems.count)
+            return _u.random(MP3.playingItems.count)
         default: //"none"
             return nil
         }
@@ -79,52 +84,6 @@ class MP3:NSObject,AVAudioPlayerDelegate{
         }
         else {loop = loopTypes[now + 1] }
     }
-    
-    
-    static func validCheck(item:Dictionary<String, AnyObject>)->Bool{
-        
-        if (item["newOrOld"] as? String) == "new" {logmark("not permitted 👾"); return false}
-        guard let localIdentity = item["localIdentity"] as? String else {logmark("not permitted 👾👾"); return false}
-        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
-        if !FileManager.default.fileExists(atPath: localURL.path){logmark("not permitted 👾👾👾"); return false}
-        
-        return true
-    }
-    
-    static func resetPlayer(item:Dictionary<String,AnyObject>){
-        
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player)
-        
-        playingItem = item
-        
-        let localIdentity = playingItem["localIdentity"] as! String
-        
-        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
-        logvar("localURL ✌️", localURL)
-
-        do{
-            player = try AVAudioPlayer(contentsOf:localURL)
-            player?.prepareToPlay()
-//            player?.delegate = self
-            player?.play()
-        }catch{
-            logerr(error)
-        }
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.mixWithOthers)
-        } catch {
-        }
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(MP3.playNext), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player)
-
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
-
-        
-    }
-    
     
 }
 
