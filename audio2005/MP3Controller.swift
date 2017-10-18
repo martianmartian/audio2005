@@ -3,7 +3,8 @@ import AVFoundation
 import MediaPlayer
 //AVAudioPlayerDelegate
 
-class MP3:NSObject,AVAudioPlayerDelegate{
+
+class MP3: NSObject, AVAudioPlayerDelegate{
     static var player: AVAudioPlayer?
     static var loop = loopTypes[0]
     
@@ -93,8 +94,7 @@ class MP3:NSObject,AVAudioPlayerDelegate{
     
     static func resetPlayer(item:Dictionary<String,AnyObject>){
         
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player)
-        
+
         playingItem = item
         
         let localIdentity = playingItem["localIdentity"] as! String
@@ -116,12 +116,10 @@ class MP3:NSObject,AVAudioPlayerDelegate{
         } catch {
         }
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(MP3.playNext), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player)
-
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
-
+        loghere()
         
     }
     
