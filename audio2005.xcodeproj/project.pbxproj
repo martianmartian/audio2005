@@ -81,6 +81,7 @@
 		43C7374E1F89215C0098D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = audio2005Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		43C7375E1F8922380098D95A /* syslog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syslog.swift; sourceTree = "<group>"; };
 		43C737611F8927070098D95A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		43E62A881F96FB350049594F /* default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default.mp3; sourceTree = "<group>"; };
 		43F0C7DC1F8939A70091D790 /* IIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIViewController.swift; sourceTree = "<group>"; };
 		43F0C7DE1F893ABB0091D790 /* IIIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIIViewController.swift; sourceTree = "<group>"; };
 		4FDA37B582F4037947E03966 /* Pods-audio2005.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005/Pods-audio2005.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		43C737361F89215C0098D95A /* audio2005 */ = {
 			isa = PBXGroup;
 			children = (
+				43E62A881F96FB350049594F /* default.mp3 */,
 				43C737371F89215C0098D95A /* AppDelegate.swift */,
 				43F0C7DB1F89393E0091D790 /* Controllers */,
 				43F0C7DA1F892F160091D790 /* Factories */,

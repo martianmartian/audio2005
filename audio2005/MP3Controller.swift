@@ -11,7 +11,6 @@ class M: NSObject, AVAudioPlayerDelegate{
         M.enableBackgroundOnce()
         logmark("you shouldn't see this message more than once 💟")
         //TODO: set some thing default to play here to prevent crash.
-        
     }
     func newPlay(){
         let localIdentity = MP3.playingItem["localIdentity"] as! String
@@ -28,11 +27,9 @@ class M: NSObject, AVAudioPlayerDelegate{
             logerr(error)
         }
     }
-    
-    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
         loghere()
-
+        MP3.playNext()
     }
     
 }
@@ -42,7 +39,7 @@ class MP3{
     
     static let m = M()
 
-    static var loop = loopTypes[0]
+    static var loop = loopTypes[1]
     static var outlet:Dictionary<String, AnyObject>{
         get{return MP3.playingItem}
         set(item){
@@ -96,13 +93,11 @@ class MP3{
         switch loop {
         case loopTypes[0]: //one
             return i
-        case loopTypes[1]: //loop
-            if i == playingItems.count-1{return nil}
-            return i+1
         case loopTypes[2]: //shuffle
             return _u.random(playingItems.count)
-        default: //"none"
-            return nil
+        default : //loop, none
+            if i == playingItems.count-1{return nil}
+            return i+1
         }
     }
     static func switchLoopType(){
