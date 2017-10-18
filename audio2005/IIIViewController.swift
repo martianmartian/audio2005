@@ -9,18 +9,19 @@ class IIIViewController: UIViewController {
     @IBAction func startPlay(_ sender: UIButton) {
         if notInited {return}
         MP3.togglePlay()
+        updatePlayerView()
     }
     
     @IBAction func playPre(_ sender: UIButton) {
         if notInited {return}
         MP3.playPre()
-        self.loadView()
+        updatePlayerView()
     }
     
     @IBAction func playNext(_ sender: UIButton) {
         if notInited {return}
         MP3.playNext()
-        self.loadView()
+        updatePlayerView()
     }
 
     @IBAction func switchLoopType(_ sender: UIButton) {
@@ -31,16 +32,20 @@ class IIIViewController: UIViewController {
     @IBOutlet weak var switchLoopType: UIButton!
     @IBOutlet weak var nowplaying: UILabel!
 
-    override func loadView() {
-        super.loadView()
-        if let image = UIImage(named: MP3.loop) { switchLoopType.setImage(image, for: []) }
-        if let name = MP3.playingItem["itemName"] as? String{
-            nowplaying?.text = name
-        }
+    override func viewDidLoad() {
+        switchLoopType.setImage(UIImage(named: MP3.loop), for: [])
+        
+        updatePlayerView()
     }
+
     var notInited:Bool{
         if MP3.playingItem["localIdentity"] == nil {return true}
         return false
+    }
+    func updatePlayerView(){
+        if let name = MP3.playingItem["itemName"] as? String{
+            nowplaying?.text = name
+        }
     }
 
 }
