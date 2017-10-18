@@ -1,27 +1,63 @@
-
+import Foundation
 import AVFoundation
 import MediaPlayer
-//AVAudioPlayerDelegate
 
-
-class MP3: NSObject, AVAudioPlayerDelegate{
-    static var player: AVAudioPlayer?
-    static var loop = loopTypes[0]
+class M: NSObject, AVAudioPlayerDelegate{
     
+    var player: AVAudioPlayer = AVAudioPlayer()
     
-    
-    static var playingItem = Dictionary<String, AnyObject>() //King
-    static var outlet : Dictionary<String,AnyObject>{ //Guard of king, only outlet of this class
-        get{return playingItem}
-        set(item){
-            //validCheck item
-            if !validCheck(item: item){return}
-            //check if duplicated
-            if playingItemId == (item[itemId] as! String){return}
-            //all other conditions
-            resetPlayer(item:item)
+    override init() {
+        super.init()
+        M.enableBackgroundOnce()
+        logmark("you shouldn't see this message more than once 💟")
+        //TODO: set some thing default to play here to prevent crash.
+        
+    }
+    func newPlay(){
+        let localIdentity = MP3.playingItem["localIdentity"] as! String
+        
+        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
+        logvar("localURL ✌️", localURL)
+        
+        do{
+            player = try AVAudioPlayer(contentsOf:localURL)
+            player.prepareToPlay()
+            player.delegate = self
+            player.play()
+        }catch{
+            logerr(error)
         }
     }
+    
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        loghere()
+
+    }
+    
+}
+
+
+class MP3{
+    
+    static let m = M()
+
+    static var loop = loopTypes[0]
+    static var outlet:Dictionary<String, AnyObject>{
+        get{return MP3.playingItem}
+        set(item){
+            //validCheck item
+            if !MP3.validCheck(item: item){return}
+            //check if duplicated
+            if MP3.playingItemId == (item[itemId] as! String){return}
+            //all other conditions
+            MP3.playingItem = item
+            m.newPlay()
+        }
+    }
+
+    static var playingItem = Dictionary<String, AnyObject>() //King
+
     static var playingAlbumId : String{
         guard let id = playingItem[albumId] as? String else {return ""}
         return id
@@ -42,20 +78,16 @@ class MP3: NSObject, AVAudioPlayerDelegate{
         return index
     }
     
-    
     static func togglePlay(){
-        if player == nil { logmark("trying to play empty list");return}
-        if (player?.isPlaying)!{ player?.pause() } else { player?.play() }
+        if m.player.isPlaying { m.player.pause() } else { m.player.play() }
     }
     static func playPre(){
-        if player == nil { logmark("trying to play empty list");return}
         let nowItemIndex = playingItemIndex
         if nowItemIndex == 0{return}
         let go = nowItemIndex - 1
         outlet = playingItems[go]
     }
-    @objc static func playNext(){
-        if player == nil { logmark("trying to play empty list");return}
+    static func playNext(){
         let nowItemIndex = playingItemIndex
         guard let go = switchNext(nowItemIndex) else {return}
         outlet = playingItems[go]
@@ -92,37 +124,19 @@ class MP3: NSObject, AVAudioPlayerDelegate{
         return true
     }
     
-    static func resetPlayer(item:Dictionary<String,AnyObject>){
-        
-
-        playingItem = item
-        
-        let localIdentity = playingItem["localIdentity"] as! String
-        
-        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
-        logvar("localURL ✌️", localURL)
-
-        do{
-            player = try AVAudioPlayer(contentsOf:localURL)
-            player?.prepareToPlay()
-//            player?.delegate = self
-            player?.play()
-        }catch{
-            logerr(error)
-        }
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.mixWithOthers)
-        } catch {
-        }
-        
-    }
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
-        loghere()
-        
-    }
+
     
     
 }
 
+
+extension M{
+    static func enableBackgroundOnce(){
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        UIApplication.shared.beginBackgroundTask(expirationHandler: { () -> Void in })
+        do { try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback) }
+        catch _ {}
+    }
+    
+}
