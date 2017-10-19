@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WPW-5c-qtA">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--IViewController-->
+        <scene sceneID="Mqc-xO-Lv2">
+            <objects>
+                <viewController storyboardIdentifier="IViewController" title="IViewController" id="WPW-5c-qtA" customClass="IViewController" customModule="audio2005" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZw-8Q-9n5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TYS-Q8-bmz">
+                                <rect key="frame" x="15" y="28" width="384" height="708"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zf7-fZ-X0M">
+                                    <size key="itemSize" width="90" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCell" id="eJs-9q-UlJ" customClass="albumCell" customModule="audio2005" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-RR-TlV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="2M7-O0-Vce"/>
+                                                        <constraint firstAttribute="width" constant="90" id="pyQ-wZ-O3p"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-im-eGu">
+                                                    <rect key="frame" x="0.0" y="90" width="90" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="A53-OJ-k3A"/>
+                                                        <constraint firstAttribute="width" constant="90" id="DWB-2z-1gS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="hd5-im-eGu" firstAttribute="top" secondItem="d1d-RR-TlV" secondAttribute="bottom" id="483-DO-5It"/>
+                                            <constraint firstItem="d1d-RR-TlV" firstAttribute="leading" secondItem="eJs-9q-UlJ" secondAttribute="leading" id="TBx-5C-4y0"/>
+                                            <constraint firstItem="hd5-im-eGu" firstAttribute="leading" secondItem="eJs-9q-UlJ" secondAttribute="leading" id="Yyn-fX-iDe"/>
+                                            <constraint firstAttribute="trailing" secondItem="hd5-im-eGu" secondAttribute="trailing" id="b79-UB-VX7"/>
+                                            <constraint firstAttribute="bottom" secondItem="hd5-im-eGu" secondAttribute="bottom" id="fnK-mB-fBt"/>
+                                            <constraint firstItem="d1d-RR-TlV" firstAttribute="top" secondItem="eJs-9q-UlJ" secondAttribute="top" id="hiu-uY-bhn"/>
+                                            <constraint firstAttribute="trailing" secondItem="d1d-RR-TlV" secondAttribute="trailing" id="izx-b9-FEz"/>
+                                            <constraint firstItem="hd5-im-eGu" firstAttribute="top" secondItem="d1d-RR-TlV" secondAttribute="bottom" id="yZc-we-gZj"/>
+                                        </constraints>
+                                        <size key="customSize" width="90" height="120"/>
+                                        <connections>
+                                            <outlet property="albumImage" destination="d1d-RR-TlV" id="BNX-i2-pJD"/>
+                                            <outlet property="imageLabel" destination="hd5-im-eGu" id="Phh-3f-I0A"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="WPW-5c-qtA" id="Xpd-LY-9wX"/>
+                                    <outlet property="delegate" destination="WPW-5c-qtA" id="Uis-6H-0Zt"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnE-in-gWx">
+                                <rect key="frame" x="57" y="396" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Download All"/>
+                                <connections>
+                                    <action selector="download_r:" destination="WPW-5c-qtA" eventType="touchUpInside" id="agZ-yb-7yO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kog-lS-rX6">
+                                <rect key="frame" x="64" y="350" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remove All"/>
+                                <connections>
+                                    <action selector="removeAll:" destination="WPW-5c-qtA" eventType="touchUpInside" id="hNn-2J-5bQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="TYS-Q8-bmz" firstAttribute="leading" secondItem="sIo-WG-HGU" secondAttribute="leading" constant="15" id="DAB-kp-eBO"/>
+                            <constraint firstItem="TYS-Q8-bmz" firstAttribute="top" secondItem="sIo-WG-HGU" secondAttribute="top" constant="8" id="FiD-KM-knQ"/>
+                            <constraint firstItem="sIo-WG-HGU" firstAttribute="bottom" secondItem="TYS-Q8-bmz" secondAttribute="bottom" id="dMl-uK-rhQ"/>
+                            <constraint firstItem="sIo-WG-HGU" firstAttribute="trailing" secondItem="TYS-Q8-bmz" secondAttribute="trailing" constant="15" id="k1Y-89-Gn2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sIo-WG-HGU"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dLt-T5-3be" appends="YES" id="3GY-Nj-EKh"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="TYS-Q8-bmz" id="g0b-YC-jUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HyQ-ri-ZgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="dLt-T5-3be">
+                    <connections>
+                        <segue destination="Zhk-H7-J0B" kind="show" identifier="oneTotwo" animates="NO" id="vND-na-2m3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="30" y="80"/>
+        </scene>
+        <!--IIViewController-->
+        <scene sceneID="rBU-jW-EwD">
+            <objects>
+                <viewController title="IIViewController" id="Zhk-H7-J0B" customClass="IIViewController" customModule="audio2005" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WNd-vQ-X0F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wz9-g5-Mxa">
+                                <rect key="frame" x="15" y="28" width="384" height="708"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" id="XRc-CH-cq6">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XRc-CH-cq6" id="ASO-nz-xvv">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Zhk-H7-J0B" id="hIf-fs-Heb"/>
+                                    <outlet property="delegate" destination="Zhk-H7-J0B" id="gsl-Vq-rbo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Wz9-g5-Mxa" firstAttribute="top" secondItem="V1s-Du-nIW" secondAttribute="top" constant="8" id="5zt-td-kaN"/>
+                            <constraint firstItem="V1s-Du-nIW" firstAttribute="trailing" secondItem="Wz9-g5-Mxa" secondAttribute="trailing" constant="15" id="Gco-p3-pzb"/>
+                            <constraint firstItem="Wz9-g5-Mxa" firstAttribute="bottom" secondItem="V1s-Du-nIW" secondAttribute="bottom" id="JPr-g8-ij4"/>
+                            <constraint firstItem="Wz9-g5-Mxa" firstAttribute="leading" secondItem="V1s-Du-nIW" secondAttribute="leading" constant="15" id="m3L-2o-9C4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V1s-Du-nIW"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wBH-Wt-FNi" appends="YES" id="7fT-Z8-SCm"/>
+                            <outletCollection property="gestureRecognizers" destination="fVU-bz-hdn" appends="YES" id="nWH-mO-TKu"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Wz9-g5-Mxa" id="Mes-3n-bDL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J53-ck-2o0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="wBH-Wt-FNi">
+                    <connections>
+                        <segue destination="SMP-Qx-S34" kind="show" identifier="twoTothree" animates="NO" id="jPj-LQ-fMc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="fVU-bz-hdn">
+                    <connections>
+                        <segue destination="WPW-5c-qtA" kind="show" identifier="twoToone" animates="NO" id="Iug-qU-36B"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="695.625" y="80"/>
+        </scene>
+        <!--IIIViewController-->
+        <scene sceneID="uxJ-98-95X">
+            <objects>
+                <viewController title="IIIViewController" id="SMP-Qx-S34" customClass="IIIViewController" customModule="audio2005" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r4v-NO-Z44">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUz-Gc-Fwq">
+                                <rect key="frame" x="23" y="263" width="61" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPre:" destination="SMP-Qx-S34" eventType="touchUpInside" id="mlB-KE-Jgd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-s7-IUe">
+                                <rect key="frame" x="237" y="263" width="61" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playNext:" destination="SMP-Qx-S34" eventType="touchUpInside" id="UGU-7e-v36"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D83-Zc-5jU">
+                                <rect key="frame" x="132" y="273" width="63" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="startPlay:" destination="SMP-Qx-S34" eventType="touchUpInside" id="3uC-xc-d02"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6d-ni-J8F">
+                                <rect key="frame" x="16" y="439" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8e-t4-CiR">
+                                <rect key="frame" x="204" y="357" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="switchLoopType:" destination="SMP-Qx-S34" eventType="touchUpInside" id="9EE-Ig-sFV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Playing: No Music Selected" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiz-l9-Rzb">
+                                <rect key="frame" x="24" y="44" width="278" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="rCF-L4-Mjg"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5wl-Md-sTq" appends="YES" id="DJi-lG-azJ"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="nowplaying" destination="Jiz-l9-Rzb" id="10N-vB-kZz"/>
+                        <outlet property="switchLoopType" destination="U8e-t4-CiR" id="Cot-Lb-AHX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ouq-HD-dGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5wl-Md-sTq">
+                    <connections>
+                        <segue destination="Zhk-H7-J0B" kind="show" identifier="threeTotwo" animates="NO" id="9qd-KG-Sr4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1359.375" y="78.75"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vND-na-2m3"/>
+    </inferredMetricsTieBreakers>
+</document>
