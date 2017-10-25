@@ -10,6 +10,10 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Let&apos;s get your music</string>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>Let&apos;s get your music</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>

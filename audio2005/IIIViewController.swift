@@ -4,6 +4,11 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
+class IIIVCData{
+    static var playAlbumIndex = 0
+    static var playItemIndex = 0
+}
+
 class IIIViewController: UIViewController {
 
     @IBAction func startPlay(_ sender: UIButton) {
@@ -29,26 +34,37 @@ class IIIViewController: UIViewController {
         if let image = UIImage(named: MP3.loop) { switchLoopType.setImage(image, for: []) }
     }
 
+    
+    @IBOutlet weak var nowTime: UILabel!
+    @IBOutlet weak var totalTime: UILabel!
     @IBOutlet weak var switchLoopType: UIButton!
     @IBOutlet weak var nowplaying: UILabel!
 
     override func viewDidLoad() {
         switchLoopType.setImage(UIImage(named: MP3.loop), for: [])
-        
         updatePlayerView()
     }
 
-    var notInited:Bool{
-        if MP3.playingItem["localIdentity"] == nil {return true}
-        return false
-    }
+
+    //make a decorator out of this updating function
     func updatePlayerView(){
-        if let name = MP3.playingItem["itemName"] as? String{
-            nowplaying?.text = name
-        }
+        if notInited {return}
+        nowTime?.text = String(MP3.m.player.currentTime)
+        totalTime?.text = String(MP3.playingItem.playbackDuration/60)
+        nowplaying?.text = MP3.playingItem.title
+    }
+    
+    var notInited:Bool{
+        return MP3.itemIn == -1
     }
 
 }
+
+
+
+
+
+
 
 
 

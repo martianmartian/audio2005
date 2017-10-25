@@ -7,20 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A8FA8BC4797B1FD0A91A71C /* Pods_audio2005UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB5B605D300D8797796D386 /* Pods_audio2005UITests.framework */; };
-		430244791F94C44D00874826 /* audio2005UITestsII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430244781F94C44D00874826 /* audio2005UITestsII.swift */; };
 		4302447B1F958F2800874826 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4302447A1F958F2800874826 /* ArrayExtensions.swift */; };
 		430617681F8A484100432E69 /* MP3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617671F8A484100432E69 /* MP3Controller.swift */; };
 		4306176F1F8A58E100432E69 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4306176E1F8A58E100432E69 /* components.swift */; };
-		430617711F8A64C400432E69 /* FactoryHttpInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617701F8A64C400432E69 /* FactoryHttpInterface.swift */; };
-		430617731F8A653800432E69 /* FactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430617721F8A653800432E69 /* FactoriesTests.swift */; };
 		432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432136DA1F8929880045F6A9 /* HttpFrame.swift */; };
-		433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433664E71F8CF41300944D1B /* audio2005UITests.swift */; };
 		433987221F8942600062FC07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433987211F8942600062FC07 /* Constants.swift */; };
 		433AA3FE1F8A0C1D00575567 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA3FD1F8A0C1D00575567 /* utils.swift */; };
 		433AA4001F8A217100575567 /* AlbumFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA3FF1F8A217100575567 /* AlbumFactory.swift */; };
 		433AA4021F8A21BA00575567 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AA4011F8A21BA00575567 /* ItemsFactory.swift */; };
-		43A657AC1F9057DE0026A2D9 /* AlbumFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A657AB1F9057DE0026A2D9 /* AlbumFactoryTests.swift */; };
 		43C737381F89215C0098D95A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737371F89215C0098D95A /* AppDelegate.swift */; };
 		43C7373A1F89215C0098D95A /* IViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C737391F89215C0098D95A /* IViewController.swift */; };
 		43C7373D1F89215C0098D95A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C7373B1F89215C0098D95A /* Main.storyboard */; };
@@ -31,7 +25,6 @@
 		43F0C7DD1F8939A70091D790 /* IIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0C7DC1F8939A70091D790 /* IIViewController.swift */; };
 		43F0C7DF1F893ABB0091D790 /* IIIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0C7DE1F893ABB0091D790 /* IIIViewController.swift */; };
 		C0A0EE7953E502A6E99C5602 /* Pods_audio2005.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B14A1A55D58B53B3BCC3DE /* Pods_audio2005.framework */; };
-		E6858CBA08BA62F87A0C66A8 /* Pods_audio2005Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613F4BD26F0B29233D1303AF /* Pods_audio2005Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,24 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		017862782B41F1BFB74701BD /* Pods-audio2005UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		0712EADAA1E7C9C9B770BF66 /* Pods-audio2005Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A072D663C3A1A7CBABF6C97 /* Pods-audio2005.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005/Pods-audio2005.debug.xcconfig"; sourceTree = "<group>"; };
-		430244781F94C44D00874826 /* audio2005UITestsII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio2005UITestsII.swift; sourceTree = "<group>"; };
 		4302447A1F958F2800874826 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		430617671F8A484100432E69 /* MP3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3Controller.swift; sourceTree = "<group>"; };
 		4306176E1F8A58E100432E69 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = components.swift; sourceTree = "<group>"; };
-		430617701F8A64C400432E69 /* FactoryHttpInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryHttpInterface.swift; sourceTree = "<group>"; };
-		430617721F8A653800432E69 /* FactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesTests.swift; sourceTree = "<group>"; };
 		432136DA1F8929880045F6A9 /* HttpFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpFrame.swift; sourceTree = "<group>"; };
 		433664E51F8CF41300944D1B /* audio2005UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audio2005UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		433664E71F8CF41300944D1B /* audio2005UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio2005UITests.swift; sourceTree = "<group>"; };
-		433664E91F8CF41300944D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		433987211F8942600062FC07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		433AA3FD1F8A0C1D00575567 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		433AA3FF1F8A217100575567 /* AlbumFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFactory.swift; sourceTree = "<group>"; };
 		433AA4011F8A21BA00575567 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
-		43A657AB1F9057DE0026A2D9 /* AlbumFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFactoryTests.swift; sourceTree = "<group>"; };
 		43C737341F89215C0098D95A /* audio2005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audio2005.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C737371F89215C0098D95A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43C737391F89215C0098D95A /* IViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +63,6 @@
 		43C737411F89215C0098D95A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C737431F89215C0098D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C737481F89215C0098D95A /* audio2005Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audio2005Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		43C7374E1F89215C0098D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = audio2005Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		43C7375E1F8922380098D95A /* syslog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syslog.swift; sourceTree = "<group>"; };
 		43C737611F8927070098D95A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43E62A881F96FB350049594F /* default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default.mp3; sourceTree = "<group>"; };
@@ -86,10 +70,8 @@
 		43F0C7DE1F893ABB0091D790 /* IIIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IIIViewController.swift; sourceTree = "<group>"; };
 		4FDA37B582F4037947E03966 /* Pods-audio2005.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005/Pods-audio2005.release.xcconfig"; sourceTree = "<group>"; };
 		613F4BD26F0B29233D1303AF /* Pods_audio2005Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_audio2005Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		621705D40611FCD6EF70E00E /* Pods-audio2005UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests.release.xcconfig"; sourceTree = "<group>"; };
 		74B14A1A55D58B53B3BCC3DE /* Pods_audio2005.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_audio2005.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB5B605D300D8797796D386 /* Pods_audio2005UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_audio2005UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD386E61589500775ED43D21 /* Pods-audio2005Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audio2005Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8FA8BC4797B1FD0A91A71C /* Pods_audio2005UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6858CBA08BA62F87A0C66A8 /* Pods_audio2005Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,10 +105,6 @@
 			children = (
 				1A072D663C3A1A7CBABF6C97 /* Pods-audio2005.debug.xcconfig */,
 				4FDA37B582F4037947E03966 /* Pods-audio2005.release.xcconfig */,
-				DD386E61589500775ED43D21 /* Pods-audio2005Tests.debug.xcconfig */,
-				0712EADAA1E7C9C9B770BF66 /* Pods-audio2005Tests.release.xcconfig */,
-				017862782B41F1BFB74701BD /* Pods-audio2005UITests.debug.xcconfig */,
-				621705D40611FCD6EF70E00E /* Pods-audio2005UITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -143,31 +119,10 @@
 			name = Basics;
 			sourceTree = "<group>";
 		};
-		433664E61F8CF41300944D1B /* audio2005UITests */ = {
-			isa = PBXGroup;
-			children = (
-				433664E71F8CF41300944D1B /* audio2005UITests.swift */,
-				430244781F94C44D00874826 /* audio2005UITestsII.swift */,
-				433664E91F8CF41300944D1B /* Info.plist */,
-			);
-			path = audio2005UITests;
-			sourceTree = "<group>";
-		};
-		433AA4051F8A21EC00575567 /* FactoriesTests */ = {
-			isa = PBXGroup;
-			children = (
-				43A657AB1F9057DE0026A2D9 /* AlbumFactoryTests.swift */,
-				430617721F8A653800432E69 /* FactoriesTests.swift */,
-			);
-			path = FactoriesTests;
-			sourceTree = "<group>";
-		};
 		43C7372B1F89215C0098D95A = {
 			isa = PBXGroup;
 			children = (
 				43C737361F89215C0098D95A /* audio2005 */,
-				43C7374B1F89215C0098D95A /* audio2005Tests */,
-				433664E61F8CF41300944D1B /* audio2005UITests */,
 				43C737351F89215C0098D95A /* Products */,
 				3768F41AB844B7FE8DD25E17 /* Pods */,
 				E7ABE9FD5ABAFDD60F7762EA /* Frameworks */,
@@ -201,15 +156,6 @@
 			path = audio2005;
 			sourceTree = "<group>";
 		};
-		43C7374B1F89215C0098D95A /* audio2005Tests */ = {
-			isa = PBXGroup;
-			children = (
-				433AA4051F8A21EC00575567 /* FactoriesTests */,
-				43C7374E1F89215C0098D95A /* Info.plist */,
-			);
-			path = audio2005Tests;
-			sourceTree = "<group>";
-		};
 		43C7375C1F8921F10098D95A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +180,6 @@
 				433987211F8942600062FC07 /* Constants.swift */,
 				433AA3FF1F8A217100575567 /* AlbumFactory.swift */,
 				433AA4011F8A21BA00575567 /* ItemsFactory.swift */,
-				430617701F8A64C400432E69 /* FactoryHttpInterface.swift */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -267,12 +212,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 433664EE1F8CF41300944D1B /* Build configuration list for PBXNativeTarget "audio2005UITests" */;
 			buildPhases = (
-				0CD625733C37F6FAC31F7F56 /* [CP] Check Pods Manifest.lock */,
 				433664E11F8CF41300944D1B /* Sources */,
 				433664E21F8CF41300944D1B /* Frameworks */,
 				433664E31F8CF41300944D1B /* Resources */,
-				50C96CD05828B57D07261BE0 /* [CP] Embed Pods Frameworks */,
-				043A7BE798EAB4C77DE804AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,12 +250,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43C737541F89215C0098D95A /* Build configuration list for PBXNativeTarget "audio2005Tests" */;
 			buildPhases = (
-				4A5B6EC8A6798AEB560A0849 /* [CP] Check Pods Manifest.lock */,
 				43C737441F89215C0098D95A /* Sources */,
 				43C737451F89215C0098D95A /* Frameworks */,
 				43C737461F89215C0098D95A /* Resources */,
-				B1222A23FF32A80C4ECB52A3 /* [CP] Embed Pods Frameworks */,
-				45821C9456F48118A070CD0D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,39 +343,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		043A7BE798EAB4C77DE804AC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0CD625733C37F6FAC31F7F56 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-audio2005UITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2ECE787ACC653F84350DDB56 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,54 +361,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-audio2005/Pods-audio2005-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		45821C9456F48118A070CD0D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A5B6EC8A6798AEB560A0849 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-audio2005Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		50C96CD05828B57D07261BE0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-audio2005UITests/Pods-audio2005UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		85A9C71423F39511A4CB50AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,21 +377,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1222A23FF32A80C4ECB52A3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-audio2005Tests/Pods-audio2005Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5D937FEEB16C0E8EDFC7930 /* [CP] Copy Pods Resources */ = {
@@ -558,8 +401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				433664E81F8CF41300944D1B /* audio2005UITests.swift in Sources */,
-				430244791F94C44D00874826 /* audio2005UITestsII.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +418,6 @@
 				433AA4001F8A217100575567 /* AlbumFactory.swift in Sources */,
 				43F0C7DF1F893ABB0091D790 /* IIIViewController.swift in Sources */,
 				433AA3FE1F8A0C1D00575567 /* utils.swift in Sources */,
-				430617711F8A64C400432E69 /* FactoryHttpInterface.swift in Sources */,
 				433987221F8942600062FC07 /* Constants.swift in Sources */,
 				43C737621F8927070098D95A /* Extensions.swift in Sources */,
 				432136DB1F8929880045F6A9 /* HttpFrame.swift in Sources */,
@@ -589,8 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43A657AC1F9057DE0026A2D9 /* AlbumFactoryTests.swift in Sources */,
-				430617731F8A653800432E69 /* FactoriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +469,6 @@
 /* Begin XCBuildConfiguration section */
 		433664EC1F8CF41300944D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 017862782B41F1BFB74701BD /* Pods-audio2005UITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8S8Q3W4MR;
@@ -647,7 +484,6 @@
 		};
 		433664ED1F8CF41300944D1B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 621705D40611FCD6EF70E00E /* Pods-audio2005UITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8S8Q3W4MR;
@@ -776,6 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8S8Q3W4MR;
 				INFOPLIST_FILE = audio2005/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = audio.audio2005;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -792,6 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8S8Q3W4MR;
 				INFOPLIST_FILE = audio2005/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = audio.audio2005;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -802,7 +640,6 @@
 		};
 		43C737551F89215C0098D95A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD386E61589500775ED43D21 /* Pods-audio2005Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -820,7 +657,6 @@
 		};
 		43C737561F89215C0098D95A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0712EADAA1E7C9C9B770BF66 /* Pods-audio2005Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

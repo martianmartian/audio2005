@@ -6,20 +6,15 @@ class M: NSObject, AVAudioPlayerDelegate{
     
     var player: AVAudioPlayer = AVAudioPlayer()
     
-    override init() {
+    override init(){
         super.init()
         M.enableBackgroundOnce()
         logmark("you shouldn't see this message more than once 💟")
         //TODO: set some thing default to play here to prevent crash.
     }
-    func newPlay(){
-        let localIdentity = MP3.playingItem["localIdentity"] as! String
-        
-        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
-        logvar("localURL ✌️", localURL)
-        
+    func newPlay(itemURL:URL){
         do{
-            player = try AVAudioPlayer(contentsOf:localURL)
+            player = try AVAudioPlayer(contentsOf:itemURL)
             player.prepareToPlay()
             player.delegate = self
             player.play()
@@ -31,63 +26,43 @@ class M: NSObject, AVAudioPlayerDelegate{
         loghere()
         MP3.playNext()
     }
-    
 }
 
 
 class MP3{
-    
     static let m = M()
-
     static var loop = loopTypes[1]
-    static var outlet:Dictionary<String, AnyObject>{
-        get{return MP3.playingItem}
-        set(item){
-            //validCheck item
-            if !MP3.validCheck(item: item){return}
-            //check if duplicated
-            if MP3.playingItemId == (item[itemId] as! String){return}
-            //all other conditions
-            MP3.playingItem = item
-            m.newPlay()
-        }
+    
+    static var albumIn = -1
+    static var itemIn = -1
+    static func setPlay(albumI:Int,itemI:Int){
+        albumIn = albumI
+        itemIn = itemI
+        let items = ItemsFactory.getItemsOf(albumIndex: albumIn)
+        playingItems = items
+        playingItem = items[itemIn]
+        guard let itemURL = playingItem.assetURL else {return}
+        m.newPlay(itemURL: itemURL)
     }
+    
+    static var playingItems = Array<MPMediaItem>()
+    static var playingItem = MPMediaItem()
+    
 
-    static var playingItem = Dictionary<String, AnyObject>() //King
-
-    static var playingAlbumId : String{
-        guard let id = playingItem[albumId] as? String else {return ""}
-        return id
-    }
-    static var playingItemId : String{
-        guard let id = playingItem[itemId] as? String else {return ""}
-        return id
-    }
-    static var playingItems : [Dictionary<String, AnyObject>]{
-        return ItemsFactory.getLocalItemsOf(albumId: playingAlbumId)
-    }
-    static var playingItemIndex:Int{
-        var index = 0
-        for (i,item) in playingItems.enumerated(){
-            guard let id = item[itemId] as? String else {continue}
-            if id == playingItemId {index = i; break}
-        }
-        return index
-    }
     
     static func togglePlay(){
         if m.player.isPlaying { m.player.pause() } else { m.player.play() }
     }
     static func playPre(){
-        let nowItemIndex = playingItemIndex
+        let nowItemIndex = itemIn
         if nowItemIndex == 0{return}
         let go = nowItemIndex - 1
-        outlet = playingItems[go]
+        setPlay(albumI: albumIn, itemI: go)
     }
     static func playNext(){
-        let nowItemIndex = playingItemIndex
+        let nowItemIndex = itemIn
         guard let go = switchNext(nowItemIndex) else {return}
-        outlet = playingItems[go]
+        setPlay(albumI: albumIn, itemI: go)
     }
     static func switchNext(_ i:Int)->Int?{
         switch loop {
@@ -107,21 +82,6 @@ class MP3{
         }
         else {loop = loopTypes[now + 1] }
     }
-    
-    
-    static func validCheck(item:Dictionary<String, AnyObject>)->Bool{
-        
-        if (item["newOrOld"] as? String) == "new" {logmark("not permitted 👾"); return false}
-        guard let localIdentity = item["localIdentity"] as? String else {logmark("not permitted 👾👾"); return false}
-        let localURL = _u.getLocalURLFrom(localIdentity: localIdentity)
-        if !FileManager.default.fileExists(atPath: localURL.path){logmark("not permitted 👾👾👾"); return false}
-        
-        return true
-    }
-    
-    
-
-    
     
 }
 
