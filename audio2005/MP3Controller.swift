@@ -23,7 +23,7 @@ class M: NSObject, AVAudioPlayerDelegate{
         }
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
-        loghere()
+        //loghere()
         MP3.playNext()
     }
 }
@@ -92,6 +92,9 @@ extension M{
         UIApplication.shared.beginBackgroundTask(expirationHandler: { () -> Void in })
         do { try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback) }
         catch _ {}
+    }
+    static func enableRemoteOnce(){
+        
     }
     
 }

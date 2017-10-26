@@ -11,6 +11,15 @@ class IIIVCData{
 
 class IIIViewController: UIViewController {
 
+    @IBOutlet weak var nowTime: UILabel!
+    @IBOutlet weak var totalTime: UILabel!
+    @IBOutlet weak var switchLoopType: UIButton!
+    @IBOutlet weak var nowplaying: UILabel!
+    
+    @IBOutlet weak var playCtrl: UIButton!
+    @IBOutlet weak var preCtrl: UIButton!
+    @IBOutlet weak var nextCtrl: UIButton!
+    
     @IBAction func startPlay(_ sender: UIButton) {
         if notInited {return}
         MP3.togglePlay()
@@ -33,13 +42,9 @@ class IIIViewController: UIViewController {
         MP3.switchLoopType()
         if let image = UIImage(named: MP3.loop) { switchLoopType.setImage(image, for: []) }
     }
+    var notInited:Bool{return MP3.itemIn == -1}
 
     
-    @IBOutlet weak var nowTime: UILabel!
-    @IBOutlet weak var totalTime: UILabel!
-    @IBOutlet weak var switchLoopType: UIButton!
-    @IBOutlet weak var nowplaying: UILabel!
-
     override func viewDidLoad() {
         switchLoopType.setImage(UIImage(named: MP3.loop), for: [])
         updatePlayerView()
@@ -51,12 +56,16 @@ class IIIViewController: UIViewController {
         if notInited {return}
         nowTime?.text = String(MP3.m.player.currentTime)
         totalTime?.text = String(MP3.playingItem.playbackDuration/60)
+        if MP3.m.player.isPlaying {playCtrl.setImage(UIImage(named:"pause"), for: [])}
+        else {playCtrl.setImage(UIImage(named:"play"), for: [])}
+        updateViewFreq()
+    }
+    func updateViewFreq(){
+        if notInited {return}
         nowplaying?.text = MP3.playingItem.title
     }
     
-    var notInited:Bool{
-        return MP3.itemIn == -1
-    }
+    
 
 }
 
