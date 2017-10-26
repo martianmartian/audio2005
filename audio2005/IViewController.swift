@@ -10,7 +10,6 @@ class IViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logvar("Albums", Albums)
         setupCollectionView()
     }
     
@@ -29,7 +28,7 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView.register(albumCell.self, forCellWithReuseIdentifier: "albumCell")
-        collectionView.backgroundColor = UIColor.gray
+        collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = false
@@ -57,7 +56,7 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         return CGSize(width: CGFloat(w), height: CGFloat(w+20))
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        logmark("Going to album: \(indexPath.row)")
+        //logmark("Going to album: \(indexPath.row)")
         IIVCData.viewAlbumIndex = indexPath.row
         self.performSegue(withIdentifier: "oneTotwo", sender: self)
     }

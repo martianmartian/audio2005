@@ -15,6 +15,7 @@ class IIViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.alwaysBounceVertical = false
+        //logvar("viewItems", viewItems)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return viewItems.count }

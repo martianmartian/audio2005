@@ -152,7 +152,7 @@
                                     <action selector="playNext:" destination="SMP-Qx-S34" eventType="touchUpInside" id="UGU-7e-v36"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-A0-uVV">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-A0-uVV">
                                 <rect key="frame" x="46" y="349" width="232" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -178,6 +178,7 @@
                         <outlet property="nowplaying" destination="Jiz-l9-Rzb" id="10N-vB-kZz"/>
                         <outlet property="playCtrl" destination="D83-Zc-5jU" id="4FW-3c-7Yl"/>
                         <outlet property="preCtrl" destination="iUz-Gc-Fwq" id="WVy-T3-DXd"/>
+                        <outlet property="progress" destination="Ydd-A0-uVV" id="fcU-Bv-lpj"/>
                         <outlet property="switchLoopType" destination="U8e-t4-CiR" id="Cot-Lb-AHX"/>
                         <outlet property="totalTime" destination="w1P-mF-JrH" id="9a0-k8-3gl"/>
                     </connections>

@@ -11,6 +11,9 @@ class IIIVCData{
 
 class IIIViewController: UIViewController {
 
+    var notInited:Bool{return MP3.itemIn == -1}
+    var timer = Timer()
+    
     @IBOutlet weak var nowTime: UILabel!
     @IBOutlet weak var totalTime: UILabel!
     @IBOutlet weak var switchLoopType: UIButton!
@@ -19,6 +22,8 @@ class IIIViewController: UIViewController {
     @IBOutlet weak var playCtrl: UIButton!
     @IBOutlet weak var preCtrl: UIButton!
     @IBOutlet weak var nextCtrl: UIButton!
+    
+    @IBOutlet weak var progress: UIProgressView!
     
     @IBAction func startPlay(_ sender: UIButton) {
         if notInited {return}
@@ -42,34 +47,58 @@ class IIIViewController: UIViewController {
         MP3.switchLoopType()
         if let image = UIImage(named: MP3.loop) { switchLoopType.setImage(image, for: []) }
     }
-    var notInited:Bool{return MP3.itemIn == -1}
-
     
+
     override func viewDidLoad() {
-        switchLoopType.setImage(UIImage(named: MP3.loop), for: [])
+        super.viewDidLoad()
         updatePlayerView()
     }
-
-
-    //make a decorator out of this updating function
-    func updatePlayerView(){
-        if notInited {return}
-        nowTime?.text = String(MP3.m.player.currentTime)
-        totalTime?.text = String(MP3.playingItem.playbackDuration/60)
-        if MP3.m.player.isPlaying {playCtrl.setImage(UIImage(named:"pause"), for: [])}
-        else {playCtrl.setImage(UIImage(named:"play"), for: [])}
-        updateViewFreq()
+    override func viewWillDisappear(_ animated: Bool) {
+        stopTimer()
+        super.viewWillDisappear(false)
     }
-    func updateViewFreq(){
-        if notInited {return}
-        nowplaying?.text = MP3.playingItem.title
-    }
-    
-    
-
 }
 
-
+extension IIIViewController{
+    //Mark: Timer stuff
+    func startTimer(){
+        if notInited {return};
+        timer.invalidate()
+        timer = _u.setInterval(0.5){self.updateViewFreq()};
+        logmark("timer started")
+    }
+    func stopTimer(){
+        if notInited {return};
+        timer.invalidate()
+        logmark("timer stopped")
+    }
+    
+    
+    //Mark: view update stuff
+    func updateViewFreq(){
+        if notInited {return}
+        let time1 = M.calculateTimeFromNSTimeInterval(MP3.m.player.currentTime)
+        nowTime?.text = "\(time1.minute):\(time1.second)"
+        progress.progress = Float(MP3.m.player.currentTime/MP3.playingItem.playbackDuration)
+    }
+    func updatePlayerView(){
+        if notInited {return}
+        
+        //others
+        switchLoopType.setImage(UIImage(named: MP3.loop), for: [])
+        nowplaying?.text = MP3.playingItem.title
+        
+        //Mark: time display
+        let time2 = M.calculateTimeFromNSTimeInterval(MP3.playingItem.playbackDuration)
+        totalTime?.text = "\(time2.minute):\(time2.second)"
+        
+        //Mark: play button
+        if MP3.m.player.isPlaying {playCtrl.setImage(UIImage(named:"pause"), for: []);startTimer()}
+        else {playCtrl.setImage(UIImage(named:"play"), for: []);stopTimer()}
+        
+        
+    }
+}
 
 
 

@@ -18,9 +18,9 @@ class ItemsFactory{
     }
     
     static func getItemsOf(albumIndex:Int) -> Array<MPMediaItem>{
-        let query = MPMediaQuery.playlists()
-        guard let albums = query.collections else {return Array<MPMediaItem>()}
-        //guard let album = albums[albumIndex] else {return Array<MPMediaItem>()}
+        
+        let albums = AlbumFactory.getMediaAlbums()
+
         let album = albums[albumIndex]
         let items = album.items
 
