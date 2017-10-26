@@ -23,12 +23,13 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
     
     func setupCollectionView(){
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 15
+        layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
+        
         
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView.register(albumCell.self, forCellWithReuseIdentifier: "albumCell")
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.gray
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = false
@@ -54,7 +55,6 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:IndexPath)->CGSize {
         let w = (collectionView.frame.size.width-20) / 3
         return CGSize(width: CGFloat(w), height: CGFloat(w+20))
-//        return CGSize(width: view.frame.width/4, height: view.frame.width/4 + 20)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         logmark("Going to album: \(indexPath.row)")
@@ -69,19 +69,20 @@ class albumCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         im = UIImageView()
-        im.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
+        im.frame = CGRect(x: 0, y: 0, width: frame.width*0.75, height: frame.width*0.75)
+        im.center = contentView.center
+        im.center.y -= 20/2
         im.contentMode = .scaleAspectFit
         im.clipsToBounds = true
         
         self.contentView.addSubview(im)
         
         codedLabel = UILabel()
-        codedLabel.contentMode = .bottom
-        codedLabel.frame = CGRect(x: 0, y: frame.width, width: frame.width, height: 20)
+        codedLabel.backgroundColor=UIColor.white
+        codedLabel.frame = CGRect(x: 0, y: frame.width, width: frame.width*0.75, height: 20)
+        codedLabel.center.x=contentView.center.x
         codedLabel.textAlignment = .center
         codedLabel.numberOfLines=1
-        //codedLabel.textColor=UIColor.white
-        //codedLabel.backgroundColor=UIColor.blue
         self.contentView.addSubview(codedLabel)
         //Remember to add UI Element to the contentView, not the cell itself
     }
