@@ -3,6 +3,7 @@
 import UIKit
 import MediaPlayer
 
+//Data and Events
 class IViewController: UIViewController{
 
     var Albums = AlbumFactory.getMediaAlbums()
@@ -12,8 +13,22 @@ class IViewController: UIViewController{
         super.viewDidLoad()
         setupCollectionView()
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //logmark("Going to album: \(indexPath.row)")
+        IIVCData.viewAlbumIndex = indexPath.row
+        self.performSegue(withIdentifier: "oneTotwo", sender: self)
+    }
     
 }
+
+
+
+
+
+
+
+
+// Setup up view
 extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     override func loadView() { UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation");super.loadView()}
     override var shouldAutorotate: Bool { return false }
@@ -46,7 +61,7 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         albumCell.awakeFromNib()
         albumCell.im.image = UIImage(named: albumCovers[indexPath.row])
         albumCell.codedLabel.text = name
-        albumCell.isUserInteractionEnabled=true
+        albumCell.isUserInteractionEnabled = true
         
         return albumCell
     }
@@ -55,11 +70,7 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         let w = (collectionView.frame.size.width-20) / 3
         return CGSize(width: CGFloat(w), height: CGFloat(w+20))
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //logmark("Going to album: \(indexPath.row)")
-        IIVCData.viewAlbumIndex = indexPath.row
-        self.performSegue(withIdentifier: "oneTotwo", sender: self)
-    }
+
     
 }
 class albumCell: UICollectionViewCell {

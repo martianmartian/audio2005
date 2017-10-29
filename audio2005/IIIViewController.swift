@@ -23,7 +23,7 @@ class IIIViewController: UIViewController {
     @IBOutlet weak var preCtrl: UIButton!
     @IBOutlet weak var nextCtrl: UIButton!
     
-    @IBOutlet weak var progress: UIProgressView!
+    @IBOutlet weak var slider: UISlider!
     
     @IBAction func startPlay(_ sender: UIButton) {
         if notInited {return}
@@ -47,6 +47,20 @@ class IIIViewController: UIViewController {
         MP3.switchLoopType()
         if let image = UIImage(named: MP3.loop) { switchLoopType.setImage(image, for: []) }
     }
+    
+    @IBAction func slided(_ sender: UISlider, forEvent event: UIEvent) {
+        if notInited {return}
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .ended:
+                let currentTime = MP3.m.player.duration * Double(sender.value)
+                MP3.m.player.currentTime = currentTime
+            default:
+                break
+            }
+        }
+    }
+    
     
 
     override func viewDidLoad() {
@@ -79,7 +93,7 @@ extension IIIViewController{
         if notInited {return}
         let time1 = M.calculateTimeFromNSTimeInterval(MP3.m.player.currentTime)
         nowTime?.text = "\(time1.minute):\(time1.second)"
-        progress.progress = Float(MP3.m.player.currentTime/MP3.playingItem.playbackDuration)
+        slider.setValue(Float(MP3.m.player.currentTime/MP3.playingItem.playbackDuration), animated: true)
     }
     func updatePlayerView(){
         if notInited {return}
@@ -96,11 +110,8 @@ extension IIIViewController{
         if MP3.m.player.isPlaying {playCtrl.setImage(UIImage(named:"pause"), for: []);startTimer()}
         else {playCtrl.setImage(UIImage(named:"play"), for: []);stopTimer()}
         
-        
     }
 }
-
-
 
 
 
