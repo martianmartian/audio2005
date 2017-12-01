@@ -4,15 +4,13 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-class IIIVCData{
-    static var playAlbumIndex = 0
-    static var playItemIndex = 0
-}
-
 class IIIViewController: UIViewController {
 
     var notInited:Bool{return MP3.itemIn == -1}
     var timer = Timer()
+    var bookmarks = [Dictionary<String,AnyObject>]()
+    
+    @IBOutlet weak var bookmarkcount: UILabel!
     
     @IBOutlet weak var nowTime: UILabel!
     @IBOutlet weak var totalTime: UILabel!
@@ -60,9 +58,32 @@ class IIIViewController: UIViewController {
             }
         }
     }
-    
-    
+    func jumpto(t:Int){
+        if notInited {return}
+        
+        var go = Float(0)
+        let to = Float(MP3.m.player.currentTime) + Float(t)
+        
+        if to<0 { go = 0 }
+        else if to > Float(MP3.m.player.duration){ go = Float(MP3.m.player.duration)}
+        else{ go = to }
 
+        MP3.m.player.currentTime = Double(go)
+        updateViewFreq()
+    }
+    
+    @IBAction func left1(_ sender: UIButton) { jumpto(t: -5) }
+    
+    @IBAction func left2(_ sender: UIButton) { jumpto(t: -30) }
+    
+    @IBAction func left3(_ sender: UIButton) { jumpto(t: -60) }
+    
+    @IBAction func right1(_ sender: UIButton) { jumpto(t: 5) }
+    
+    @IBAction func right2(_ sender: UIButton) { jumpto(t: 30) }
+    
+    @IBAction func right3(_ sender: UIButton) { jumpto(t: 60) }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePlayerView()
@@ -72,6 +93,17 @@ class IIIViewController: UIViewController {
         super.viewWillDisappear(false)
     }
 }
+
+extension IIIViewController{
+    
+}
+
+
+
+
+
+
+
 
 extension IIIViewController{
     //Mark: Timer stuff
@@ -97,6 +129,11 @@ extension IIIViewController{
     }
     func updatePlayerView(){
         if notInited {return}
+        
+        //Bookmarks
+        bookmarks = ItemsFactory.getBookmarksOf(item: MP3.playingItem)
+        bookmarkcount?.text = "Total bookmarks: " + String(bookmarks.count)
+        
         
         //others
         switchLoopType.setImage(UIImage(named: MP3.loop), for: [])

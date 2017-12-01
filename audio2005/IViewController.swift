@@ -40,7 +40,6 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         
-        
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView.register(albumCell.self, forCellWithReuseIdentifier: "albumCell")
         collectionView.backgroundColor = UIColor.white
@@ -61,6 +60,7 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         albumCell.awakeFromNib()
         albumCell.im.image = UIImage(named: albumCovers[indexPath.row])
         albumCell.codedLabel.text = name
+        if MP3.albumIn == indexPath.row { albumCell.codedLabel.textColor = UIColor.blue }
         albumCell.isUserInteractionEnabled = true
         
         return albumCell
@@ -71,7 +71,6 @@ extension IViewController: UICollectionViewDataSource,UICollectionViewDelegate,U
         return CGSize(width: CGFloat(w), height: CGFloat(w+20))
     }
 
-    
 }
 class albumCell: UICollectionViewCell {
     var im : UIImageView!

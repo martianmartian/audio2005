@@ -23,6 +23,7 @@ class IIViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "itemCell")
         let item = viewItems[indexPath.row]
         cell.textLabel?.text = item.title
+        if MP3.playingItem.persistentID == item.persistentID { cell.textLabel?.textColor = UIColor.blue }
         cell.isUserInteractionEnabled=true
         return cell
     }

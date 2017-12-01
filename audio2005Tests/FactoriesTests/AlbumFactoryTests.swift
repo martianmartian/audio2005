@@ -8,7 +8,7 @@
 
 import XCTest
 import Foundation
-import Alamofire
+
 @testable import audio2005
 
 class AlbumFactoryTests: XCTestCase {
